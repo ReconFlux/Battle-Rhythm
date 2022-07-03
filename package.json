@@ -4,9 +4,9 @@
   "description": "A SharePoint Custom Solution that Centralizes a Businesses Battle Rhythm into an all-in-one Collaboration Tool.",
   "main": "src/index.ts",
   "scripts": {
-      "all": "npm run build && npm run prod",
-      "build": "webpack --mode=development",
-      "prod": "webpack --mode=production"
+    "all": "npm run build && npm run prod",
+    "build": "webpack --mode=development",
+    "prod": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,8 @@
     "dattatable": "^1.9.5",
     "gd-sprest-bs": "^9.7.1",
     "jquery": "^3.6.0",
-    "moment": "^2.29.3"
+    "moment": "^2.29.3",
+    "vis-timeline": "^7.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
