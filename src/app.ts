@@ -329,7 +329,7 @@ export class App {
                     let brandText = navBrand.innerText;
                     let div = document.createElement("div");
                     div.classList.add("me-2");
-                    div.appendChild(Icons.B2Logo(48, 78));
+                    //div.appendChild(Icons.B2Logo(48, 78)); // Need to make this customizable
                     navBrand.innerHTML = div.outerHTML;
                     navBrand.append(brandText);
                 },
