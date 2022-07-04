@@ -794,13 +794,6 @@ export class App {
         el.classList.add("active");
     }
 
-    private updateForProperties(props: Components.IListFormEditProps): Components.IListFormEditProps {
-        props.onControlRendering = (field) => {
-            
-        }
-        // return the properties
-        return props;
-    }
 }
 
 

@@ -21,6 +21,7 @@ export const Configuration = Helper.SPConfig({
                     ]
                 }
             ],
+            TitleFieldDisplayName: "Event Name",
             CustomFields: [
                 {
                     name: "AssignedTo",
