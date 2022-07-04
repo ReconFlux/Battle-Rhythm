@@ -13,7 +13,7 @@ import { cardList } from "gd-sprest-bs/build/icons/svgs/cardList";
 import { DataSource, IItem, ISetting } from "./ds";
 import Strings from "./strings";
 import { TimeLine } from "./Timeline/timeline";
-import { Icons } from "./icons";
+//import { Icons } from "./icons";
 import { folderFill } from "gd-sprest-bs/build/icons/svgs/folderFill";
 import { DocModal } from "./Forms/DocsModal";
 import { templateModal } from "./Forms/templatefolderModal";
