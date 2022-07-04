@@ -344,6 +344,10 @@ export class App {
                             ItemForm.ListName = Strings.Lists.BREvents;
                             // Create an item
                             ItemForm.create({
+                                // Custom Header
+                                onSetHeader: (el) => {
+                                    el.innerText = "Create New Event"
+                                },
                                 onUpdate: () => {
                                     // Initialize the application
                                     DataSource.init().then(() => {
