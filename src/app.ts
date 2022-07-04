@@ -48,7 +48,6 @@ const TL_DY_1: IDateRange = {
     start: moment().startOf('day').format('YYYY/MM/DD'),
     end: moment().endOf('week').format('YYYY/MM/DD'),
     zoomMin: 1000 * 60 * 60 * 24, // one day in milliseconds
-
 }
 const TL_WK_1: IDateRange = {
     OffsetDays: 0,
@@ -275,7 +274,6 @@ export class App {
         let NavTitle = DataSource.Settings[0];
         let NavColor = DataSource.Settings[0];
         let SubNavTitle = DataSource.Settings[0];
-        let SubNavTitleTL = DataSource.Settings[0];
         // Theme Switch
         let ELthemeswitch = document.createElement('div');
         Components.CheckboxGroup({
@@ -286,7 +284,7 @@ export class App {
                 {
                     label: "Dark Mode",
                     onChange: (item) => {
-                        item ? alert('Dark Mode ON') : alert('Dark Mode OFF');
+                        item ? alert('Dark Mode ON') : alert('Dark Mode OFF');  // TODO
                     }
 
                 }
@@ -743,10 +741,8 @@ export class App {
 
         if (this._showTLNav) {
             btnLegend.classList.remove("d-none");
-            //btnLeaderTracker.classList.remove("d-none");
         } else {
             btnLegend.classList.add("d-none");
-            //btnLeaderTracker.classList.add("d-none");
         }
     }
 
@@ -786,21 +782,21 @@ export class App {
     }
 
 }
-function loadColors() {
+// function loadColors() {
+    
 
-    let LOE_CurrentMission = document.querySelector("#rect_Current Mission") as HTMLElement;
-    LOE_CurrentMission.setAttribute("style", `border-left-color: ${DataSource.Configuration.LOEcolors.currentmission}`);
+//     let LOE_CurrentMission = document.querySelector("#rect_Current Mission") as HTMLElement;
+//     LOE_CurrentMission.setAttribute("style", `border-left-color: ${DataSource.Configuration.LOEcolors.currentmission}`);
 
+//     let LOE_FutureMission = document.querySelector("#rect_Future Mission") as HTMLElement;
+//     LOE_FutureMission.setAttribute("style", `border-left-color: ${DataSource.Configuration.LOEcolors.futuremission}`);
 
-    let LOE_FutureMission = document.querySelector("#rect_Future Mission") as HTMLElement;
-    LOE_FutureMission.setAttribute("style", `border-left-color: ${DataSource.Configuration.LOEcolors.futuremission}`);
+//     let LOE_EnableMission = document.querySelector("#rect_Enable Mission Partner Success") as HTMLElement;
+//     LOE_EnableMission.setAttribute("style", `border-left-color: ${DataSource.Configuration.LOEcolors.enablemissionpartnersuccess}`);
 
-    let LOE_EnableMission = document.querySelector("#rect_Enable Mission Partner Success") as HTMLElement;
-    LOE_EnableMission.setAttribute("style", `border-left-color: ${DataSource.Configuration.LOEcolors.enablemissionpartnersuccess}`);
-
-    let LOE_RectAirmen = document.querySelector("#rect_Airmen and Campus") as HTMLElement;
-    LOE_RectAirmen.setAttribute("style", `border-left-color: ${DataSource.Configuration.LOEcolors.airmenandcampus}`);
-}
+//     let LOE_RectAirmen = document.querySelector("#rect_Airmen and Campus") as HTMLElement;
+//     LOE_RectAirmen.setAttribute("style", `border-left-color: ${DataSource.Configuration.LOEcolors.airmenandcampus}`);
+// }
 
 
 
