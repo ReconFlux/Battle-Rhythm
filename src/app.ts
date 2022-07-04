@@ -335,7 +335,7 @@ export class App {
                     // New Item
                     {
                         className: "btn-outline-light btn-sm",
-                        iconClassName: "me-3",
+                        iconClassName: "me-2",
                         text: "New Event",
                         isButton: true,
                         iconType: fileEarmarkPlusFill,
@@ -409,7 +409,7 @@ export class App {
                     {
                         text: "Templates",
                         className: "btn-outline-light me-3 templates_btn btn-sm",
-                        iconClassName: "me-3",
+                        iconClassName: "me-2",
                         iconSize: 18,
                         iconType: folderFill,
                         isButton: true,
@@ -422,7 +422,7 @@ export class App {
                         text: "Settings",
                         className: "btn-outline-light me-3 btn-sm",
                         iconSize: 18,
-                        iconClassName: "me-3",
+                        iconClassName: "me-2",
                         iconType: gearWideConnected,
                         isButton: true,
                         items: [
@@ -435,6 +435,7 @@ export class App {
                                 text: "Navigation Bar",
 
                                 iconSize: 18,
+                                iconClassName: "me-3",
                                 iconType: palette,
                                 onClick: () => {
                                     new NavBarSettings.edit(1, () => {
@@ -446,6 +447,7 @@ export class App {
                                 text: "Sub-Navigation Bar",
                                 iconSize: 18,
                                 iconType: palette,
+                                iconClassName: "me-3",
                                 onClick: () => {
                                     new SubNavBarSettings.edit(1, () => {
                                         location.reload();
@@ -465,6 +467,7 @@ export class App {
                                 text: "Legend",
                                 iconSize: 18,
                                 iconType: palette,
+                                iconClassName: "me-3",
                                 onClick: () => {
                                     new CustomLegend.edit(1, () => {
                                         location.reload();
@@ -511,7 +514,7 @@ export class App {
                     {
                         text: "Help",
                         className: "btn-outline-light me-3 btn-sm",
-                        iconClassName: "me-3",
+                        iconClassName: "me-2",
                         iconSize: 18,
                         isButton: true,
                         iconType: questionSquare,
@@ -531,6 +534,7 @@ export class App {
                             {
                                 text: "Contact Support",
                                 iconSize: 18,
+                                iconClassName: "me-3",
                                 iconType: envelope,
                             },
                         ]
