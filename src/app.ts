@@ -335,7 +335,8 @@ export class App {
                     // New Item
                     {
                         className: "btn-outline-light btn-sm",
-                        text: "New Entry",
+                        iconClassName: "me-3",
+                        text: "New Event",
                         isButton: true,
                         iconType: fileEarmarkPlusFill,
                         iconSize: 18,
@@ -408,6 +409,7 @@ export class App {
                     {
                         text: "Templates",
                         className: "btn-outline-light me-3 templates_btn btn-sm",
+                        iconClassName: "me-3",
                         iconSize: 18,
                         iconType: folderFill,
                         isButton: true,
@@ -420,6 +422,7 @@ export class App {
                         text: "Settings",
                         className: "btn-outline-light me-3 btn-sm",
                         iconSize: 18,
+                        iconClassName: "me-3",
                         iconType: gearWideConnected,
                         isButton: true,
                         items: [
@@ -508,6 +511,7 @@ export class App {
                     {
                         text: "Help",
                         className: "btn-outline-light me-3 btn-sm",
+                        iconClassName: "me-3",
                         iconSize: 18,
                         isButton: true,
                         iconType: questionSquare,
@@ -782,21 +786,6 @@ export class App {
     }
 
 }
-// function loadColors() {
-    
-
-//     let LOE_CurrentMission = document.querySelector("#rect_Current Mission") as HTMLElement;
-//     LOE_CurrentMission.setAttribute("style", `border-left-color: ${DataSource.Configuration.LOEcolors.currentmission}`);
-
-//     let LOE_FutureMission = document.querySelector("#rect_Future Mission") as HTMLElement;
-//     LOE_FutureMission.setAttribute("style", `border-left-color: ${DataSource.Configuration.LOEcolors.futuremission}`);
-
-//     let LOE_EnableMission = document.querySelector("#rect_Enable Mission Partner Success") as HTMLElement;
-//     LOE_EnableMission.setAttribute("style", `border-left-color: ${DataSource.Configuration.LOEcolors.enablemissionpartnersuccess}`);
-
-//     let LOE_RectAirmen = document.querySelector("#rect_Airmen and Campus") as HTMLElement;
-//     LOE_RectAirmen.setAttribute("style", `border-left-color: ${DataSource.Configuration.LOEcolors.airmenandcampus}`);
-// }
 
 
 
