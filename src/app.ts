@@ -344,6 +344,7 @@ export class App {
                             ItemForm.ListName = Strings.Lists.BREvents;
                             // Create an item
                             ItemForm.create({
+
                                 // Custom Header
                                 onSetHeader: (el) => {
                                     el.innerText = "Create New Event"
@@ -793,7 +794,16 @@ export class App {
         el.classList.add("active");
     }
 
+    private updateForProperties(props: Components.IListFormEditProps): Components.IListFormEditProps {
+        props.onControlRendering = (field) => {
+            
+        }
+        // return the properties
+        return props;
+    }
 }
+
+
 
 
 
