@@ -84,9 +84,10 @@ export class App {
     private _elTable: HTMLElement = null;
     private _timeline: TimeLine = null;
     private _showTLNav: boolean = false;
+    private _elNavButton: HTMLAnchorElement = null;
     private _item: IItem = null;
     private _Settings: ISetting;
-    private isTimeline: boolean = false;
+
 
 
     // Constructor
@@ -326,6 +327,7 @@ export class App {
                     //div.appendChild(Icons.B2Logo(48, 78)); // Need to make this customizable
                     navBrand.innerHTML = div.outerHTML;
                     navBrand.append(brandText);
+                    this._elNavButton = el.querySelector(".nav-timeline-btn");
                 },
                 items: [
                     // New Item
@@ -363,9 +365,10 @@ export class App {
                         className: "btn-outline-light nav-timeline-btn ms-2 btn-sm",
                         text: "Timeline",
                         isButton: true,
-                        // iconType: this.isTimeline ? folderFill : calendar2RangeFill,
+                        iconType: this.isTimeline ? folderFill : calendar2RangeFill,
                         onClick: (item, ev) => {
 
+                            this._elNavButton.classList.contains("nav-timeline-btn")
 
                             // Get the timeline button
                             let btn = el.querySelector(".nav-timeline-btn") as HTMLElement;
@@ -386,7 +389,10 @@ export class App {
                                 // Refesh Timeline
                                 this._timeline.refresh();
 
+                                // Change Button Text
                                 btn.innerHTML = "Dashboard";
+                                // Change Button Class
+                                btn.classList.add("dashboard");
                             } else {
                                 // Show the dashboard
                                 this._timeline.hide();
@@ -395,7 +401,8 @@ export class App {
                                 btn.innerHTML = "Timeline";
                                 this.showTLButtons(ev);
                                 this.showZoomButtons(ev);
-                                // this.isTimeline = true;
+                                // Change Button Class
+                                btn.classList.add("timeline");
                             }
 
                             // Check if legend is displaying
@@ -815,6 +822,11 @@ export class App {
         el.classList.add("active");
     }
 
+    // Timeline/Dashboard Icon
+    private isTimeline(): boolean {
+        if (this._elNavButton.classList.contains("timeline")) { return true; }
+        return false;
+    }
 
 
 }
