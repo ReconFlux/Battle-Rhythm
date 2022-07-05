@@ -369,14 +369,8 @@ export class App {
                         iconSize: 18,
                         iconType: calendar2RangeFill,
                         onClick: (item, ev) => {
-
-
-
-                            // Get the timeline button
-                            let btn = el.querySelector(".nav-timeline-btn") as HTMLElement;
-
-                            // Determine if we are displaying the dashboard
-                            if (btn.innerText.trim() == "Timeline") {
+                            let icon = this._elNavButton.firstChild as SVGElement;
+                            if (this._elNavButton.classList.contains("timeline")) {
 
 
                                 // Show the timeline
@@ -391,51 +385,54 @@ export class App {
                                 // Refesh Timeline
                                 this._timeline.refresh();
 
-                                // Change Button Text
-                                btn.innerHTML = "Dashboard";
-                                // Change Button Class
-                                btn.classList.remove("timeline");
-                                btn.classList.add("dashboard");
 
                                 // Clear the button icon
                                 while (this._elNavButton.firstChild) { this._elNavButton.removeChild(this._elNavButton.firstChild); }
 
                                 // Render the dashboard icon
                                 this._elNavButton.appendChild(folderFill(18, 18));
+                                icon.classList.add("me-3");
 
-                                // Update the text
+
+
+
+                                // Change Button Text
                                 this._elNavButton.append("Dashboard");
 
-
-                            } else {
-                                // Show the dashboard
-                                this._timeline.hide();
-                                this.subnavSwitch(ev);
-                                this._elTable.classList.remove("d-none");
-                                btn.innerHTML = "Timeline";
-                                this.showTLButtons(ev);
-                                this.showZoomButtons(ev);
                                 // Change Button Class
-                                btn.classList.remove("dashboard");
-                                btn.classList.add("timeline");
+                                this._elNavButton.classList.remove("timeline");
+                                this._elNavButton.classList.add("dashboard");
+
+                            } else if (this._elNavButton.classList.contains("dashboard")) {
+
                                 // Clear the button icon
                                 while (this._elNavButton.firstChild) { this._elNavButton.removeChild(this._elNavButton.firstChild); }
 
                                 // Render the dashboard icon
                                 this._elNavButton.appendChild(calendar2RangeFill(18, 18));
+                                icon.classList.add("me-3");
 
-                                // Update the text
-                                this._elNavButton.append("Dashboard");
+                                // Change Button Text
+                                this._elNavButton.append("Timeline");
+
+                                // Change Button Class
+                                this._elNavButton.classList.remove("dashboard");
+                                this._elNavButton.classList.add("timeline");
+
+                                // Show the dashboard
+                                this._timeline.hide();
+                                this.subnavSwitch(ev);
+                                this._elTable.classList.remove("d-none");
+                                this.showTLButtons(ev);
+                                this.showZoomButtons(ev);
                             }
-
                             // Check if legend is displaying
                             let legend = el.querySelector(".Legend_Toast") as HTMLElement;
                             if (legend.classList.contains("show")) {
                                 legend.classList.remove("show");
                                 legend.classList.add("hide");
                             }
-
-                        },
+                        }
 
                     }
                 ],
