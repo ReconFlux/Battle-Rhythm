@@ -274,22 +274,6 @@ export class App {
         let NavTitle = DataSource.Settings[0];
         let NavColor = DataSource.Settings[0];
         let SubNavTitle = DataSource.Settings[0];
-        // Theme Switch
-        let ELthemeswitch = document.createElement('div');
-        Components.CheckboxGroup({
-            type: Components.CheckboxGroupTypes.Switch,
-            el: ELthemeswitch,
-            multi: false,
-            items: [
-                {
-                    label: "Dark Mode",
-                    onChange: (item) => {
-                        item ? alert('Dark Mode ON') : alert('Dark Mode OFF');  // TODO
-                    }
-
-                }
-            ]
-        });
         // Create the dashboard
         this._dashboard = new Dashboard({
             el,
@@ -563,6 +547,7 @@ export class App {
                     let navBrand = navEl.querySelector(".navbar-brand") as HTMLAnchorElement;
                     let div = document.createElement('div');
                     navBrand.append(div);
+                    // Theme Switch
                     Components.CheckboxGroup({
                         type: Components.CheckboxGroupTypes.Switch,
                         className: "position-absolute bottom-0 start-0 fs-6",
@@ -580,6 +565,8 @@ export class App {
                 },
                 onRendering(props) {
                     props.brand = " ";
+                    props.className = "rounded-bottom"
+                    
                 },
 
                 itemsEnd: [
