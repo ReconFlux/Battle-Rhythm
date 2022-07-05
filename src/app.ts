@@ -86,6 +86,7 @@ export class App {
     private _showTLNav: boolean = false;
     private _item: IItem = null;
     private _Settings: ISetting;
+    private isTimeline: boolean = false;
 
 
     // Constructor
@@ -268,6 +269,17 @@ export class App {
     }
 
 
+    // get isTimeline(): boolean {
+    //     // Get the timeline button
+    //     let btn = document.querySelector(".nav-timeline-btn") as HTMLElement;
+
+
+    //     // Check if its on Dashboard
+    //     if (btn.innerHTML == "Timeline") { return true; }
+
+    //     // Not in Timeline
+    //     return false
+    // }
 
     // Renders the dashboard
     private render(el: HTMLElement) {
@@ -345,11 +357,15 @@ export class App {
                     },
                     // Dashboard/Timeline Switch
                     {
+                        onRender: (item) => {
+                            item.id = "timelineButton";
+                        },
                         className: "btn-outline-light nav-timeline-btn ms-2 btn-sm",
                         text: "Timeline",
                         isButton: true,
-                        iconType: calendar2RangeFill,
+                        // iconType: this.isTimeline ? folderFill : calendar2RangeFill,
                         onClick: (item, ev) => {
+
 
                             // Get the timeline button
                             let btn = el.querySelector(".nav-timeline-btn") as HTMLElement;
@@ -358,7 +374,6 @@ export class App {
                             if (btn.innerText.trim() == "Timeline") {
 
 
-                                item.iconType = calendar2RangeFill;
                                 // Show the timeline
                                 this._elTable.classList.add("d-none");
                                 this._timeline.show();
@@ -373,8 +388,6 @@ export class App {
 
                                 btn.innerHTML = "Dashboard";
                             } else {
-                                // Change Icon
-                                item.iconType = folderFill;
                                 // Show the dashboard
                                 this._timeline.hide();
                                 this.subnavSwitch(ev);
@@ -382,7 +395,7 @@ export class App {
                                 btn.innerHTML = "Timeline";
                                 this.showTLButtons(ev);
                                 this.showZoomButtons(ev);
-
+                                // this.isTimeline = true;
                             }
 
                             // Check if legend is displaying
@@ -759,7 +772,6 @@ export class App {
     // Show the timeline buttons
     private showTLButtons(ev) {
         let btnLegend = document.querySelector(".legend_btn");
-        //let btnLeaderTracker = document.querySelector(".LT_btn");
 
         if (this._showTLNav) {
             btnLegend.classList.remove("d-none");
@@ -803,13 +815,7 @@ export class App {
         el.classList.add("active");
     }
 
-    // Timeline/Dashboard Icon
-    private IconSet(el) {
-        let btn = el.querySelector(".nav-timeline-btn") as HTMLElement;
-        if (btn.innerText.trim() == "Timeline") {
 
-        }
-    }
 
 }
 
