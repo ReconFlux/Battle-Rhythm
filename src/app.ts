@@ -557,10 +557,31 @@ export class App {
                 itemsEnd: this.generateNavEndItems(),
             },
             footer: {
-                onRendered: (el) => {
-                    // 509th PROD doesnt need dark mode
-                    //el.prepend(ELthemeswitch);
+                onRendered(el) {
+                    // Update classes for the navBar container
+                    let navEl = el.firstChild as HTMLElement;
+                    let navBrand = navEl.querySelector(".navbar-brand") as HTMLAnchorElement;
+                    let div = document.createElement('div');
+                    navBrand.append(div);
+                    Components.CheckboxGroup({
+                        type: Components.CheckboxGroupTypes.Switch,
+                        className: "position-absolute bottom-0 start-0 fs-6",
+                        el: div,
+                        multi: false,
+                        items: [
+                            {
+                                label: "Dark Mode",
+                                onChange: (item) => {
+                                    item ? alert('Dark Mode ON') : alert('Dark Mode OFF');  // TODO
+                                },
+                            },
+                        ]
+                    });
                 },
+                onRendering(props) {
+                    props.brand = " ";
+                },
+
                 itemsEnd: [
                     {
                         text: "v" + Strings.Version,
