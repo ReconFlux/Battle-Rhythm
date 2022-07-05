@@ -348,6 +348,7 @@ export class App {
                         className: "btn-outline-light nav-timeline-btn ms-2 btn-sm",
                         text: "Timeline",
                         isButton: true,
+                        iconType: calendar2RangeFill,
                         onClick: (item, ev) => {
 
                             // Get the timeline button
@@ -356,7 +357,7 @@ export class App {
                             // Determine if we are displaying the dashboard
                             if (btn.innerText.trim() == "Timeline") {
 
-                                // this.iconSwitch(ev);
+
                                 item.iconType = calendar2RangeFill;
                                 // Show the timeline
                                 this._elTable.classList.add("d-none");
@@ -373,7 +374,6 @@ export class App {
                                 btn.innerHTML = "Dashboard";
                             } else {
                                 // Change Icon
-                                // this.iconSwitch(ev);
                                 item.iconType = folderFill;
                                 // Show the dashboard
                                 this._timeline.hide();
@@ -391,7 +391,8 @@ export class App {
                                 legend.classList.remove("show");
                                 legend.classList.add("hide");
                             }
-                        }
+                        },
+
                     }
                 ],
                 itemsEnd: [
@@ -566,7 +567,7 @@ export class App {
                 onRendering(props) {
                     props.brand = " ";
                     props.className = "rounded-bottom"
-                    
+
                 },
 
                 itemsEnd: [
@@ -800,6 +801,14 @@ export class App {
 
         // Make this element active
         el.classList.add("active");
+    }
+
+    // Timeline/Dashboard Icon
+    private IconSet(el) {
+        let btn = el.querySelector(".nav-timeline-btn") as HTMLElement;
+        if (btn.innerText.trim() == "Timeline") {
+
+        }
     }
 
 }
