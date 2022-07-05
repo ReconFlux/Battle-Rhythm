@@ -362,13 +362,15 @@ export class App {
                         onRender: (item) => {
                             item.id = "timelineButton";
                         },
-                        className: "btn-outline-light nav-timeline-btn ms-2 btn-sm",
+                        className: "btn-outline-light nav-timeline-btn ms-2 btn-sm timeline",
                         text: "Timeline",
                         isButton: true,
-                        iconType: this.isTimeline ? folderFill : calendar2RangeFill,
+                        iconClassName: "me-2",
+                        iconSize: 18,
+                        iconType: calendar2RangeFill,
                         onClick: (item, ev) => {
 
-                            this._elNavButton.classList.contains("nav-timeline-btn")
+
 
                             // Get the timeline button
                             let btn = el.querySelector(".nav-timeline-btn") as HTMLElement;
@@ -392,7 +394,19 @@ export class App {
                                 // Change Button Text
                                 btn.innerHTML = "Dashboard";
                                 // Change Button Class
+                                btn.classList.remove("timeline");
                                 btn.classList.add("dashboard");
+
+                                // Clear the button icon
+                                while (this._elNavButton.firstChild) { this._elNavButton.removeChild(this._elNavButton.firstChild); }
+
+                                // Render the dashboard icon
+                                this._elNavButton.appendChild(folderFill(18, 18));
+
+                                // Update the text
+                                this._elNavButton.append("Dashboard");
+
+
                             } else {
                                 // Show the dashboard
                                 this._timeline.hide();
@@ -402,7 +416,16 @@ export class App {
                                 this.showTLButtons(ev);
                                 this.showZoomButtons(ev);
                                 // Change Button Class
+                                btn.classList.remove("dashboard");
                                 btn.classList.add("timeline");
+                                // Clear the button icon
+                                while (this._elNavButton.firstChild) { this._elNavButton.removeChild(this._elNavButton.firstChild); }
+
+                                // Render the dashboard icon
+                                this._elNavButton.appendChild(calendar2RangeFill(18, 18));
+
+                                // Update the text
+                                this._elNavButton.append("Dashboard");
                             }
 
                             // Check if legend is displaying
@@ -411,6 +434,7 @@ export class App {
                                 legend.classList.remove("show");
                                 legend.classList.add("hide");
                             }
+
                         },
 
                     }
