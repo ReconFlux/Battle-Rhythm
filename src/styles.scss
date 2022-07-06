@@ -11,3 +11,32 @@ svg.bi.bi-folder-fill {
 svg.bi.bi-calendar2-range-fill {
     margin-right: 0.7rem !important;
 }
+
+/*LEGEND*/
+.Legend_Toast {
+    position: fixed;
+    z-index: 11;
+    left: 10vw;
+    top: 22vh;
+    font-size: small !important;
+    background-color: #fbfbfbd9 !important;
+  }
+  .legendBody{
+    border-left-width: 1rem;
+    padding-left: 1rem;
+    border-left-style: solid;
+    margin-top: 3px;
+  }
+  /*ITEM CLASS COLOR CODE*/
+  .Itemclass_Current {
+    border-left-width: 15px !important;
+  }
+  .Itemclass_Future {
+    border-left-width: 15px !important;
+  }
+  .Itemclass_Enable {
+    border-left-width: 15px !important;
+  }
+  .Itemclass_Airmen {
+    border-left-width: 15px !important;
+  }
