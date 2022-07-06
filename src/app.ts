@@ -113,8 +113,9 @@ export class App {
             // Legend
             text: "Legend",
             isButton: true,
-            iconSize: 24,
+            iconSize: 18,
             iconType: cardList,
+            iconClassName: "me-2",
             className: "btn-outline-dark me-3 legend_btn d-none btn-sm",
             onClick: () => {
 
@@ -159,8 +160,9 @@ export class App {
                 text: "Daily",
                 isButton: true,
                 className: "btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
-                iconSize: 24,
+                iconSize: 18,
                 iconType: calendarDay,
+                iconClassName: "me-2",
                 onClick: (item, ev) => {
                     // Set this item as active
                     this.setActiveElement((ev.currentTarget as HTMLElement).querySelector(".btn-filter"));
@@ -180,8 +182,9 @@ export class App {
                 text: "Weekly",
                 isButton: true,
                 className: "btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
-                iconSize: 24,
+                iconSize: 18,
                 iconType: calendarWeek,
+                iconClassName: "me-2",
                 onClick: (item, ev) => {
                     // Set this item as active
                     this.setActiveElement((ev.currentTarget as HTMLElement).querySelector(".btn-filter"));
@@ -199,8 +202,9 @@ export class App {
                 text: "Monthly",
                 isButton: true,
                 className: "btn-outline-dark m-2 me-0 btn-filter d-none btn-sm active",
-                iconSize: 24,
+                iconSize: 18,
                 iconType: calendarMonth,
+                iconClassName: "me-2",
                 onClick: (item, ev) => {
                     // Set this item as active
                     this.setActiveElement((ev.currentTarget as HTMLElement).querySelector(".btn-filter"));
@@ -217,8 +221,9 @@ export class App {
                 text: "3 Month",
                 isButton: true,
                 className: "btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
-                iconSize: 24,
+                iconSize: 18,
                 iconType: calendar3,
+                iconClassName: "me-2",
                 onClick: (item, ev) => {
                     // Set this item as active
                     this.setActiveElement((ev.currentTarget as HTMLElement).querySelector(".btn-filter"));
@@ -236,8 +241,9 @@ export class App {
                 text: "6 Month",
                 isButton: true,
                 className: "btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
-                iconSize: 24,
+                iconSize: 18,
                 iconType: calendarPlus,
+                iconClassName: "me-2",
                 onClick: (item, ev) => {
                     // Set this item as active
                     this.setActiveElement((ev.currentTarget as HTMLElement).querySelector(".btn-filter"));
