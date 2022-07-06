@@ -4,6 +4,7 @@ import { formatDateValue, getFieldValue } from "../common";
 import { DataSource } from "../ds";
 import { ItemDisplayForm } from "../Forms/ItemDisplayForm";
 import { IDateRange } from "../app";
+import { Components } from "gd-sprest-bs";
 
 /**
  * Timeline
@@ -207,6 +208,11 @@ export class TimeLine {
     // Renders the timeline
     private render() {
 
+        // Clear the element
+        while (this._el.firstChild) { this._el.removeChild(this._el.firstChild); }
+        
+        let elCard = document.createElement('div');
+        this._el.appendChild(elCard);
         // Ensure items exist
         if (this._items.length > 0) {
             // Create the view
@@ -240,6 +246,14 @@ export class TimeLine {
             // Update Color on Range Change
             this.Timeline.on("rangechange", () => {
                 loadTabColors();
+            });
+        } else if (this._items.length == 0) {
+            Components.Card({
+                el: elCard,
+                body: [{
+                    title: "No Data",
+                    text: "No data exists, please create an event."
+                }]
             });
         }
     }
