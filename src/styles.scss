@@ -14,12 +14,13 @@ svg.bi.bi-calendar2-range-fill {
 
 /*LEGEND*/
 .Legend_Toast {
-    position: fixed;
-    z-index: 11;
-    left: 10vw;
-    top: 22vh;
+    position: absolute;
+    z-index: 9;
     font-size: small !important;
     background-color: #fbfbfbd9 !important;
+  }
+  .toast-header{
+    cursor: move !important;
   }
   .legendBody{
     border-left-width: 1rem;
