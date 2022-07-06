@@ -275,19 +275,6 @@ export class App {
         });
     }
 
-
-    // get isTimeline(): boolean {
-    //     // Get the timeline button
-    //     let btn = document.querySelector(".nav-timeline-btn") as HTMLElement;
-
-
-    //     // Check if its on Dashboard
-    //     if (btn.innerHTML == "Timeline") { return true; }
-
-    //     // Not in Timeline
-    //     return false
-    // }
-
     // Renders the dashboard
     private render(el: HTMLElement) {
         let NavTitle = DataSource.Settings[0];
@@ -793,7 +780,12 @@ export class App {
                         }
                     },
                 ]
-            }
+            },
+            onRendered(el) {
+                el.id = "DASHBOARD";
+                el.classList.add("rounded");
+                el.setAttribute("style", "border: 1px solid #dbdbdb");
+            },
         });
     }
 
@@ -861,13 +853,6 @@ export class App {
         // Make this element active
         el.classList.add("active");
     }
-
-    // Timeline/Dashboard Icon
-    private isTimeline(): boolean {
-        if (this._elNavButton.classList.contains("timeline")) { return true; }
-        return false;
-    }
-
 
 }
 
