@@ -710,8 +710,7 @@ export class App {
                     },
                     {
                         name: "Title",
-                        title: "Battle Rhythm Event"
-
+                        title: "Event Name"
                     },
                     {
                         name: "Priorities",
