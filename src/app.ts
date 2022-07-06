@@ -370,12 +370,21 @@ export class App {
                         iconType: calendar2RangeFill,
                         onClick: (item, ev) => {
                             let icon = this._elNavButton.firstChild as SVGElement;
+                            let filtericon = document.querySelector(".filter-icon");
+                            // Get the search element
+                            let elSearch = document.querySelector(".navbar input[type='search']") as HTMLInputElement;
                             if (this._elNavButton.classList.contains("timeline")) {
 
 
                                 // Show the timeline
                                 this._elTable.classList.add("d-none");
                                 this._timeline.show();
+
+                                filtericon.classList.add("d-none");
+
+                                // Disable the search element
+                                elSearch.disabled = true;
+
 
                                 // Change the subnav
                                 this.subnavSwitch(ev);
@@ -404,6 +413,11 @@ export class App {
                                 this._elNavButton.classList.add("dashboard");
 
                             } else if (this._elNavButton.classList.contains("dashboard")) {
+
+                                // Enable the search element
+                                elSearch.disabled = false;
+
+                                filtericon.classList.remove("d-none");
 
                                 // Clear the button icon
                                 while (this._elNavButton.firstChild) { this._elNavButton.removeChild(this._elNavButton.firstChild); }
