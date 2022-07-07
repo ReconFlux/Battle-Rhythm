@@ -7,10 +7,12 @@ export class Legend {
     private items: Components.IBadgeProps[] = [];
     private LOEs = []
     private _elBase = document.createElement('div');
+    //private dragItem = document.querySelector(".Legend_Toast");
+    private container = document.querySelector(".Legend_Toast");
 
     constructor(el: HTMLElement) {
         this.render(el);
-
+        dragElement();
     }
 
     private render(el: HTMLElement) {
@@ -21,6 +23,7 @@ export class Legend {
             className: "Legend_Toast hide d-none",
             headerText: Settings.legendHeader,
             onRenderBody: (el) => {
+                el.id = "legendBody";
 
                 // Return a promise
                 return new Promise((resolve, reject) => {
@@ -78,77 +81,72 @@ export class Legend {
             },
             options: { autohide: true },
             onRenderHeader(el) {
-                el.id = "mydivHeader";
+                el.id = "legendHead";
             },
         });
-
-
     }
 
-
 }
+// Make the DIV element draggable:
+//dragElement(document.querySelector(".Legend_Toast"));
 
-//Make the DIV element draggagle
-var dragItem = document.querySelector(".Legend_Toast");
-var container = document.querySelector(".Legend_Toast");
 
-var active = false;
-var currentX;
-var currentY;
-var initialX;
-var initialY;
-var xOffset = 0;
-var yOffset = 0;
+function dragElement() {
+    // give the legend a Id
+    let elLegend = document.querySelector('.Legend_Toast') as HTMLElement;
+    elLegend.id = "Legend";
 
-container.addEventListener("touchstart", dragStart, false);
-container.addEventListener("touchend", dragEnd, false);
-container.addEventListener("touchmove", drag, false);
 
-container.addEventListener("mousedown", dragStart, false);
-container.addEventListener("mouseup", dragEnd, false);
-container.addEventListener("mousemove", drag, false);
+    let Container = document.getElementById('_invisibleIfEmpty');
+    let dragItem = document.getElementById('Legend');
 
-function dragStart(e) {
-    if (e.type === "touchstart") {
-        initialX = e.touches[0].clientX - xOffset;
-        initialY = e.touches[0].clientY - yOffset;
-    } else {
-        initialX = e.clientX - xOffset;
-        initialY = e.clientY - yOffset;
+    // Test
+    dragItem.onmouseover = function () {
+        console.log('mouse hover');
     }
 
-    if (e.target === dragItem) {
-        active = true;
-    }
-}
-
-function dragEnd(e) {
-    initialX = currentX;
-    initialY = currentY;
-
-    active = false;
-}
-
-function drag(e) {
-    if (active) {
-
-        e.preventDefault();
-
-        if (e.type === "touchmove") {
-            currentX = e.touches[0].clientX - initialX;
-            currentY = e.touches[0].clientY - initialY;
+    //Make the DIV element draggagle:
+    dragElement(document.getElementById("Legend"));
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById("legendHead")) {
+            /* if present, the header is where you move the DIV from:*/
+            document.getElementById("legendHead").onmousedown = dragMouseDown;
         } else {
-            currentX = e.clientX - initialX;
-            currentY = e.clientY - initialY;
+            /* otherwise, move the DIV from anywhere inside the DIV:*/
+            elmnt.onmousedown = dragMouseDown;
         }
 
-        xOffset = currentX;
-        yOffset = currentY;
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
 
-        setTranslate(currentX, currentY, dragItem);
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            /* stop moving when mouse button is released:*/
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
     }
-}
 
-function setTranslate(xPos, yPos, el) {
-    el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+
 }
