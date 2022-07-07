@@ -21,6 +21,7 @@ export class Legend {
         Components.Toast({
             el,
             className: "Legend_Toast hide d-none",
+
             headerText: Settings.legendHeader,
             onRenderBody: (el) => {
                 el.id = "legendBody";
@@ -87,9 +88,6 @@ export class Legend {
     }
 
 }
-// Make the DIV element draggable:
-//dragElement(document.querySelector(".Legend_Toast"));
-
 
 function dragElement() {
     // give the legend a Id

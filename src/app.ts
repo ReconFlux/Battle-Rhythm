@@ -127,6 +127,7 @@ export class App {
                     legend.classList.remove("d-none")
                     legend.classList.remove("hide");
                     legend.classList.add("show");
+                    legend.setAttribute("style", "top: 230px; left: 489px;");
                 } else {
 
                     // hide it
@@ -134,6 +135,8 @@ export class App {
                     legend.classList.remove("show");
                     legend.classList.add("hide");
                     legend.classList.add("d-none");
+
+                    legend.setAttribute("style", "top: 230px; left: 489px;");
                 }
 
             },
