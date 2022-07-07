@@ -15,6 +15,7 @@ import Strings from "./strings";
 import { TimeLine } from "./Timeline/timeline";
 //import { Icons } from "./icons";
 import { folderFill } from "gd-sprest-bs/build/icons/svgs/folderFill";
+import { windowFullscreen } from "gd-sprest-bs/build/icons/svgs/windowFullscreen";
 import { DocModal } from "./Forms/DocsModal";
 import { templateModal } from "./Forms/templatefolderModal";
 import { Legend } from "./Forms/legend";
@@ -392,7 +393,7 @@ export class App {
                                 while (this._elNavButton.firstChild) { this._elNavButton.removeChild(this._elNavButton.firstChild); }
 
                                 // Render the dashboard icon
-                                this._elNavButton.appendChild(folderFill(18, 18));
+                                this._elNavButton.appendChild(windowFullscreen(18, 18));
                                 icon.classList.add("me-3");
 
 
