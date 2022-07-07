@@ -62,6 +62,10 @@ export interface IConfiguration {
     customization: {
         Navigation_Color: string,
         Navigation_Title: string,
+    };
+    settingslink: {
+        LOEs: string;
+        Priorities: string;
     }
 
 }
