@@ -863,6 +863,7 @@ export class App {
 function darkMode(flag: boolean) {
 
     if (flag == true) {
+
         let workspace = document.querySelector("#s4-workspace");
         workspace.classList.add("dark");
         let tableheaders = jQuery('td', '#DataTables_Table_0').addClass("dark");
@@ -893,20 +894,21 @@ function darkMode(flag: boolean) {
         // Timeline grid Text
         let TLgridText = document.querySelectorAll('.vis-text');
         TLgridText.forEach((el: HTMLElement) => {
-            el.setAttribute('style', 'color: white !important');
+            el.classList.add('TLDark');
         });
         // Timeline Label
         let tlLabel = document.querySelectorAll('.vis-label');
         tlLabel.forEach((el: HTMLElement) => {
-            el.setAttribute('style', 'color: white !important');
+            el.classList.add('TLDark');
         });
-        // Timeline vis-Major
-        let tlMajor = document.querySelectorAll('.vis-major');
-        tlMajor.forEach((el: HTMLElement) => {
-            el.setAttribute('style', 'color: white !important');
-        });
+        // // Timeline vis-Major
+        // let tlMajor = document.querySelectorAll('.vis-major');
+        // tlMajor.forEach((el: HTMLElement) => {
+        //     el.setAttribute('style', 'color: white !important');
+        // });
     }
     else if (flag == false) {
+
         let workspace = document.querySelector("#s4-workspace");
         workspace.classList.remove("dark");
         let tableheaders = jQuery('td', '#DataTables_Table_0').removeClass("dark");
@@ -943,6 +945,22 @@ function darkMode(flag: boolean) {
         let sixmoBtn = document.querySelector('.Sixmo-btn');
         sixmoBtn.classList.remove('btn-outline-light');
         sixmoBtn.classList.add('btn-outline-dark');
+
+        // Timeline grid Text
+        let TLgridText = document.querySelectorAll('.vis-text');
+        TLgridText.forEach((el: HTMLElement) => {
+            el.classList.remove('TLDark');
+        });
+        // Timeline Label
+        let tlLabel = document.querySelectorAll('.vis-label');
+        tlLabel.forEach((el: HTMLElement) => {
+            el.classList.remove('TLDark');
+        });
+        // // Timeline vis-Major
+        // let tlMajor = document.querySelectorAll('.vis-major');
+        // tlMajor.forEach((el: HTMLElement) => {
+        //     el.setAttribute('style', 'color: black !important');
+        // });
     }
 }
 
