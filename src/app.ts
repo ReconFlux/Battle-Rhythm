@@ -224,7 +224,7 @@ export class App {
             {
                 text: "3 Month",
                 isButton: true,
-                className: "3mo-btn btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
+                className: "Threemo-btn btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
                 iconSize: 18,
                 iconType: calendar3,
                 iconClassName: "me-2",
@@ -244,7 +244,7 @@ export class App {
             {
                 text: "6 Month",
                 isButton: true,
-                className: "6mo-btn btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
+                className: "Sixmo-btn btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
                 iconSize: 18,
                 iconType: calendarPlus,
                 iconClassName: "me-2",
@@ -903,6 +903,30 @@ function darkMode(flag: boolean) {
         switchText.removeAttribute('style');
         let navBrand = jQuery('.navbar-brand', '.container-fluid').removeAttr("style", "color: white !important");
         let versionText = jQuery('a.nav-link', 'li.nav-item').removeAttr("style", "color: white !important");
+
+        let legendButton = document.querySelector('.legend_btn');
+        legendButton.classList.remove('btn-outline-light');
+        legendButton.classList.add('btn-outline-dark');
+
+        let dayBtn = document.querySelector('.day-btn');
+        dayBtn.classList.remove('btn-outline-light');
+        dayBtn.classList.add('btn-outline-dark');
+
+        let wkBtn = document.querySelector('.wk-btn');
+        wkBtn.classList.remove('btn-outline-light');
+        wkBtn.classList.add('btn-outline-dark');
+
+        let moBtn = document.querySelector('.mo-btn');
+        moBtn.classList.remove('btn-outline-light');
+        moBtn.classList.add('btn-outline-dark');
+
+        let threemoBtn = document.querySelector('.Threemo-btn');
+        threemoBtn.classList.remove('btn-outline-light');
+        threemoBtn.classList.add('btn-outline-dark');
+
+        let sixmoBtn = document.querySelector('.Sixmo-btn');
+        sixmoBtn.classList.remove('btn-outline-light');
+        sixmoBtn.classList.add('btn-outline-dark');
     }
 }
 
