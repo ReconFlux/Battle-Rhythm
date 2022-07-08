@@ -880,6 +880,15 @@ function darkMode(flag: boolean) {
         // Remove the style on the filter icon
         let iconFilter = document.querySelector('svg.bi-filter');
         iconFilter.classList.remove('dark');
+
+        // Set the time line buttons
+        let tlBtns = document.querySelectorAll('.btn-sm');
+        tlBtns.forEach((el: HTMLElement) => {
+            // remove the dark class
+            el.classList.remove('btn-outline-dark');
+            // add the light class
+            el.classList.add('btn-outline-light');
+        });
     }
     else if (flag == false) {
         let workspace = document.querySelector("#s4-workspace");
