@@ -889,6 +889,22 @@ function darkMode(flag: boolean) {
             // add the light class
             el.classList.add('btn-outline-light');
         });
+
+        // Timeline grid Text
+        let TLgridText = document.querySelectorAll('.vis-text');
+        TLgridText.forEach((el: HTMLElement) => {
+            el.setAttribute('style', 'color: white !important');
+        });
+        // Timeline Label
+        let tlLabel = document.querySelectorAll('.vis-label');
+        tlLabel.forEach((el: HTMLElement) => {
+            el.setAttribute('style', 'color: white !important');
+        });
+        // Timeline vis-Major
+        let tlMajor = document.querySelectorAll('.vis-major');
+        tlMajor.forEach((el: HTMLElement) => {
+            el.setAttribute('style', 'color: white !important');
+        });
     }
     else if (flag == false) {
         let workspace = document.querySelector("#s4-workspace");
