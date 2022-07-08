@@ -2,7 +2,7 @@
     font-size: 0.7rem !important;
 }
 #footer nav {
-    background-color: #f2f2f2 !important;
+    background-color: #f2f2f2;
     padding: 0 !important;
 }
 svg.bi.bi-window-fullscreen {
@@ -42,4 +42,12 @@ svg.bi.bi-calendar2-range-fill {
   }
   .Itemclass_Airmen {
     border-left-width: 15px !important;
+  }
+
+
+  /*Dark Mode*/
+
+  .dark {
+    background-color: #31353c !important;
+    color: white !important;
   }

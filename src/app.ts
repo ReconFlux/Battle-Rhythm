@@ -610,7 +610,7 @@ export class App {
                             {
                                 label: "Dark Mode",
                                 onChange: (item) => {
-                                    item ? alert('Dark Mode ON') : alert('Dark Mode OFF');  // TODO
+                                    item ? darkMode() : alert('Dark Mode OFF');  // TODO
                                 },
                             },
                         ]
@@ -859,7 +859,14 @@ export class App {
     }
 
 }
-
+function darkMode() {
+    let workspace = document.querySelector("#s4-workspace");
+    workspace.classList.add("dark");
+    let tableheaders = jQuery('td', '#DataTables_Table_0').addClass("dark");
+    let datatable = document.querySelector('.dataTable ');
+    datatable.classList.add('dark');
+    let icons = jQuery('svg', ".btn-icon").addClass("dark");
+}
 
 
 
