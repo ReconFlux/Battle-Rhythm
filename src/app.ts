@@ -610,7 +610,8 @@ export class App {
                             {
                                 label: "Dark Mode",
                                 onChange: (item) => {
-                                    item ? darkMode() : alert('Dark Mode OFF');  // TODO
+                                    // item ? darkMode() : alert('Dark Mode OFF');  // TODO
+                                    darkMode(item ? true : false);
                                 },
                             },
                         ]
@@ -859,15 +860,37 @@ export class App {
     }
 
 }
-function darkMode() {
-    let workspace = document.querySelector("#s4-workspace");
-    workspace.classList.add("dark");
-    let tableheaders = jQuery('td', '#DataTables_Table_0').addClass("dark");
-    let datatable = document.querySelector('.dataTable ');
-    datatable.classList.add('dark');
-    let icons = jQuery('svg', ".btn-icon").addClass("dark");
-    let footer = jQuery('.navbar', '#footer').attr("style", "background-color: #444 !important");
-    let subNav = jQuery('.navbar', '#SubNav').attr("style", "background-color: #444 !important");
+function darkMode(flag: boolean) {
+
+    if (flag == true) {
+        let workspace = document.querySelector("#s4-workspace");
+        workspace.classList.add("dark");
+        let tableheaders = jQuery('td', '#DataTables_Table_0').addClass("dark");
+        let datatable = document.querySelector('.dataTable ');
+        datatable.classList.add('dark');
+        let icons = jQuery('svg', ".btn-icon").addClass("dark");
+        let footer = jQuery('.navbar', '#footer').attr("style", "background-color: #444 !important");
+        let subNav = jQuery('.navbar', '#SubNav').attr("style", "background-color: #444 !important");
+        // let switchText = jQuery('label', 'form-check-label').addClass("dark");
+        let switchText = document.querySelector('label.form-check-label');
+        switchText.setAttribute('style', 'color: white');
+        let navBrand = jQuery('.navbar-brand', '.container-fluid').attr("style", "color: white !important");
+        let versionText = jQuery('a.nav-link', 'li.nav-item').attr("style", "color: white !important");
+    }
+    else if (flag == false) {
+        let workspace = document.querySelector("#s4-workspace");
+        workspace.classList.remove("dark");
+        let tableheaders = jQuery('td', '#DataTables_Table_0').removeClass("dark");
+        let datatable = document.querySelector('.dataTable ');
+        datatable.classList.remove('dark');
+        let icons = jQuery('svg', ".btn-icon").removeClass("dark");
+        let footer = jQuery('.navbar', '#footer').removeAttr("style", "background-color: #444 !important");
+        let subNav = jQuery('.navbar', '#SubNav').removeAttr("style", "background-color: #444 !important");
+        let switchText = document.querySelector('label.form-check-label');
+        switchText.removeAttribute('style');
+        let navBrand = jQuery('.navbar-brand', '.container-fluid').removeAttr("style", "color: white !important");
+        let versionText = jQuery('a.nav-link', 'li.nav-item').removeAttr("style", "color: white !important");
+    }
 }
 
 
