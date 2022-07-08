@@ -866,6 +866,8 @@ function darkMode() {
     let datatable = document.querySelector('.dataTable ');
     datatable.classList.add('dark');
     let icons = jQuery('svg', ".btn-icon").addClass("dark");
+    let footer = jQuery('.navbar', '#footer').attr("style", "background-color: #444 !important");
+    let subNav = jQuery('.navbar', '#SubNav').attr("style", "background-color: #444 !important");
 }
 
 
