@@ -163,7 +163,7 @@ export class App {
             {
                 text: "Daily",
                 isButton: true,
-                className: "btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
+                className: "day-btn btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
                 iconSize: 18,
                 iconType: calendarDay,
                 iconClassName: "me-2",
@@ -185,7 +185,7 @@ export class App {
             {
                 text: "Weekly",
                 isButton: true,
-                className: "btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
+                className: "wk-btn btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
                 iconSize: 18,
                 iconType: calendarWeek,
                 iconClassName: "me-2",
@@ -205,7 +205,7 @@ export class App {
             {
                 text: "Monthly",
                 isButton: true,
-                className: "btn-outline-dark m-2 me-0 btn-filter d-none btn-sm active",
+                className: "mo-btn btn-outline-dark m-2 me-0 btn-filter d-none btn-sm active",
                 iconSize: 18,
                 iconType: calendarMonth,
                 iconClassName: "me-2",
@@ -224,7 +224,7 @@ export class App {
             {
                 text: "3 Month",
                 isButton: true,
-                className: "btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
+                className: "3mo-btn btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
                 iconSize: 18,
                 iconType: calendar3,
                 iconClassName: "me-2",
@@ -244,7 +244,7 @@ export class App {
             {
                 text: "6 Month",
                 isButton: true,
-                className: "btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
+                className: "6mo-btn btn-outline-dark m-2 me-0 btn-filter d-none btn-sm",
                 iconSize: 18,
                 iconType: calendarPlus,
                 iconClassName: "me-2",
