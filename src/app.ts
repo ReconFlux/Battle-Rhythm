@@ -876,6 +876,10 @@ function darkMode(flag: boolean) {
         switchText.setAttribute('style', 'color: white');
         let navBrand = jQuery('.navbar-brand', '.container-fluid').attr("style", "color: white !important");
         let versionText = jQuery('a.nav-link', 'li.nav-item').attr("style", "color: white !important");
+
+        // Remove the style on the filter icon
+        let iconFilter = document.querySelector('svg.bi-filter');
+        iconFilter.classList.remove('dark');
     }
     else if (flag == false) {
         let workspace = document.querySelector("#s4-workspace");
