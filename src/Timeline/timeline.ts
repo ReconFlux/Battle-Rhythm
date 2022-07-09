@@ -11,6 +11,10 @@ import * as jQuery from "jquery";
  * Timeline
  */
 export class TimeLine {
+    static redraw() {
+        this.redraw();
+    }
+
     private _el: HTMLElement = null;
     private _filter: string = null;
     private _groups: Array<any> = null;
@@ -293,6 +297,9 @@ export class TimeLine {
         loadTabColors();
     }
 
+    redraw() {
+        this.Timeline.redraw();
+    }
 
 
 }

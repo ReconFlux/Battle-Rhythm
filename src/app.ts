@@ -613,8 +613,8 @@ export class App {
                             {
                                 label: "Dark Mode",
                                 onChange: (item) => {
-                                    // item ? darkMode() : alert('Dark Mode OFF');  // TODO
                                     darkMode(item ? true : false);
+                                    TLredraw();
                                 },
                             },
                         ]
@@ -904,6 +904,8 @@ function darkMode(flag: boolean) {
         tlLabel.forEach((el: HTMLElement) => {
             el.classList.add('TLDark');
         });
+        // Timeline grid Text color change
+        let grid = jQuery('.vis-text', '.vis-time-axis').attr("style", "color: white !important;position: absolute;padding: 3px;overflow: hidden;box-sizing: border-box;white-space: nowrap;");
 
         App._isDarkMode = true;
 
@@ -911,7 +913,7 @@ function darkMode(flag: boolean) {
     else if (flag == false) {
 
 
-        App._isDarkMode = true;
+        App._isDarkMode = false;
 
         let workspace = document.querySelector("#s4-workspace");
         workspace.classList.remove("dark");
@@ -962,6 +964,9 @@ function darkMode(flag: boolean) {
         });
 
     }
+}
+function TLredraw() {
+    TimeLine.redraw();
 }
 
 
