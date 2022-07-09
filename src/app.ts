@@ -40,6 +40,7 @@ export interface IDateRange {
     zoomMin: number;
 }
 
+
 /*
  * Timeline View Data
  */
@@ -88,6 +89,8 @@ export class App {
     private _elNavButton: HTMLAnchorElement = null;
     private _item: IItem = null;
     private _Settings: ISetting;
+    static _isDarkMode: boolean = false;
+
 
 
 
@@ -901,13 +904,14 @@ function darkMode(flag: boolean) {
         tlLabel.forEach((el: HTMLElement) => {
             el.classList.add('TLDark');
         });
-        // // Timeline vis-Major
-        // let tlMajor = document.querySelectorAll('.vis-major');
-        // tlMajor.forEach((el: HTMLElement) => {
-        //     el.setAttribute('style', 'color: white !important');
-        // });
+
+        App._isDarkMode = true;
+
     }
     else if (flag == false) {
+
+
+        App._isDarkMode = true;
 
         let workspace = document.querySelector("#s4-workspace");
         workspace.classList.remove("dark");
@@ -956,11 +960,7 @@ function darkMode(flag: boolean) {
         tlLabel.forEach((el: HTMLElement) => {
             el.classList.remove('TLDark');
         });
-        // // Timeline vis-Major
-        // let tlMajor = document.querySelectorAll('.vis-major');
-        // tlMajor.forEach((el: HTMLElement) => {
-        //     el.setAttribute('style', 'color: black !important');
-        // });
+
     }
 }
 

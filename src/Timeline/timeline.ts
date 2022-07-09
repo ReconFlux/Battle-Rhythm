@@ -3,8 +3,9 @@ import { DataItem, DataSet, DataView, Timeline } from "vis-timeline/standalone";
 import { formatDateValue, getFieldValue } from "../common";
 import { DataSource } from "../ds";
 import { ItemDisplayForm } from "../Forms/ItemDisplayForm";
-import { IDateRange } from "../app";
+import { IDateRange, App } from "../app";
 import { Components } from "gd-sprest-bs";
+import * as jQuery from "jquery";
 
 /**
  * Timeline
@@ -210,7 +211,7 @@ export class TimeLine {
 
         // Clear the element
         while (this._el.firstChild) { this._el.removeChild(this._el.firstChild); }
-        
+
         let elCard = document.createElement('div');
         this._el.appendChild(elCard);
         // Ensure items exist
@@ -245,8 +246,17 @@ export class TimeLine {
 
             // Update Color on Range Change
             this.Timeline.on("rangechange", () => {
+                // Render Tab Colors
                 loadTabColors();
+
             });
+
+            this.Timeline.on("rangechanged", () => {
+                // Check if its on Darkmode
+                Darkmode();
+                this.Timeline.redraw();
+            });
+
         } else if (this._items.length == 0) {
             Components.Card({
                 el: elCard,
@@ -308,4 +318,38 @@ function loadTabColors() {
         TAB_AirmenCampus[i].setAttribute("style", `border-left-color: ${Settings.legend_LOE_Airmen} !important`);
     }
 
+}
+function Darkmode() {
+    let value = App._isDarkMode as boolean;
+    console.log(value);
+    if (value == true) {
+        console.log(value);
+        // Timeline grid Text color change
+        let versionText = jQuery('.vis-text', '.vis-time-axis').attr("style", "color: white !important;position: absolute;padding: 3px;overflow: hidden;box-sizing: border-box;white-space: nowrap;");
+        // let TLgridText = document.querySelectorAll('.vis-time-axis .vis-text *');
+        // TLgridText.forEach((el: HTMLElement) => {
+        //     el.style.cssText = `
+        //      {
+        //         position: absolute;
+        //         color: #fff;
+        //         padding: 3px;
+        //         overflow: hidden;
+        //         box-sizing: border-box;
+        //         white-space: nowrap;
+        //     `
+        // });
+        // Timeline Label
+        let tlLabel = document.querySelectorAll('.vis-label');
+        tlLabel.forEach((el: HTMLElement) => {
+            el.classList.add('TLDark');
+        });
+    } else if (value == false) { // Check if Darkmode is off
+        console.log(value);
+        // Timeline grid Text color change
+        let versionText = jQuery('.vis-text', '.vis-time-axis').attr("style", "color: black !important;position: absolute;padding: 3px;overflow: hidden;box-sizing: border-box;white-space: nowrap;");
+        let tlLabel = document.querySelectorAll('.vis-label');
+        tlLabel.forEach((el: HTMLElement) => {
+            el.classList.remove('TLDark');
+        });
+    }
 }
