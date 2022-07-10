@@ -28,7 +28,7 @@ const Strings = {
     SolutionUrl: ContextInfo.webServerRelativeUrl + "/SiteAssets/sp-BattleRhythm/index.html",
     SupportEmail: "stephenburtrum@burtrumtech.onmicrosoft.com",
     DateTimeFormat: "YYYY-MM-DD  HH:mm",
-    Version: "3.7.5",
+    Version: "3.8.1",
     WebConfigUrl: ContextInfo.webServerRelativeUrl + "/SiteAssets/sp-BattleRhythm/config.json",
 
 }

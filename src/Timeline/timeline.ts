@@ -11,9 +11,6 @@ import * as jQuery from "jquery";
  * Timeline
  */
 export class TimeLine {
-    static redraw() {
-        this.redraw();
-    }
 
     private _el: HTMLElement = null;
     private _filter: string = null;
@@ -23,15 +20,18 @@ export class TimeLine {
     private _view: DataView = null;
     private _isHidden: Boolean = false;
     private _elDisplayForm: HTMLElement = null;
+    private _drkbtn: HTMLInputElement = null;
 
     // Timeline
     private _timeline = null;
     get Timeline() { return this._timeline; }
     get isHidden() { return this._isHidden; }
 
-
     // Constructor
     constructor(el: HTMLElement) {
+
+        this._drkbtn = document.querySelector('.form-check-input');
+
         // Save the properties
         this._el = document.createElement("div");
         this._el.id = "timeline";
@@ -261,6 +261,13 @@ export class TimeLine {
                 this.Timeline.redraw();
             });
 
+
+            this.Timeline.on("currentTimeTick", () => {
+                this.Timeline.redraw();
+            });
+
+
+
         } else if (this._items.length == 0) {
             Components.Card({
                 el: elCard,
@@ -297,10 +304,10 @@ export class TimeLine {
         loadTabColors();
     }
 
-    redraw() {
-        this.Timeline.redraw();
-    }
 
+    public redraw() {
+
+    }
 
 }
 function loadTabColors() {
@@ -350,6 +357,7 @@ function Darkmode() {
         tlLabel.forEach((el: HTMLElement) => {
             el.classList.add('TLDark');
         });
+        // this.Timeline.redraw();
     } else if (value == false) { // Check if Darkmode is off
         console.log(value);
         // Timeline grid Text color change

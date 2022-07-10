@@ -92,6 +92,8 @@ export class App {
     static _isDarkMode: boolean = false;
 
 
+    get _Timeline() { return this._timeline }
+
 
 
     // Constructor
@@ -606,7 +608,7 @@ export class App {
                     // Theme Switch
                     Components.CheckboxGroup({
                         type: Components.CheckboxGroupTypes.Switch,
-                        className: "position-absolute bottom-0 start-0 fs-6",
+                        className: "position-absolute bottom-0 start-0 fs-6 darkmodeBtn",
                         el: div,
                         multi: false,
                         items: [
@@ -614,8 +616,10 @@ export class App {
                                 label: "Dark Mode",
                                 onChange: (item) => {
                                     darkMode(item ? true : false);
-                                    TLredraw();
+                                    this._Timeline = new TimeLine(el).redraw();
+
                                 },
+                                name: "drkmde"
                             },
                         ]
                     });
@@ -965,9 +969,10 @@ function darkMode(flag: boolean) {
 
     }
 }
-function TLredraw() {
-    TimeLine.redraw();
-}
+// function TLredraw(timeline: TimeLine) {
+//     // Refesh Timeline
+//     timeline.redraw();
+// }
 
 
 
