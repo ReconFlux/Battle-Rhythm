@@ -176,6 +176,7 @@ export class TimeLine {
 
     // Refreshes the timeline
     public refresh() {
+        console.log('tl: refresh');
         // Clear the Items
         this._items = [];
 
@@ -257,14 +258,15 @@ export class TimeLine {
 
             this.Timeline.on("rangechanged", () => {
                 // Check if its on Darkmode
-                Darkmode();
-                this.Timeline.redraw();
+                // Darkmode();
+                // this.refresh();
             });
 
 
-            this.Timeline.on("currentTimeTick", () => {
-                this.Timeline.redraw();
-            });
+            // TEST
+            // this.Timeline.on("currentTimeTick", () => {
+            //     this.Timeline.redraw();
+            // });
 
 
 
@@ -305,7 +307,19 @@ export class TimeLine {
     }
 
 
-    public redraw() {
+    public redraw(flag: boolean) {
+
+
+        if (flag == true) {
+
+            console.log('pass: TRUE');
+            Darkmode();
+            this.refresh();
+
+        } else {
+            console.log('pass: FALSE');
+        }
+
 
     }
 
@@ -336,22 +350,24 @@ function loadTabColors() {
 function Darkmode() {
     let value = App._isDarkMode as boolean;
     console.log(value);
+    // If checked
     if (value == true) {
         console.log(value);
         // Timeline grid Text color change
-        let versionText = jQuery('.vis-text', '.vis-time-axis').attr("style", "color: white !important;position: absolute;padding: 3px;overflow: hidden;box-sizing: border-box;white-space: nowrap;");
-        // let TLgridText = document.querySelectorAll('.vis-time-axis .vis-text *');
-        // TLgridText.forEach((el: HTMLElement) => {
-        //     el.style.cssText = `
-        //      {
-        //         position: absolute;
-        //         color: #fff;
-        //         padding: 3px;
-        //         overflow: hidden;
-        //         box-sizing: border-box;
-        //         white-space: nowrap;
-        //     `
+        // document.querySelectorAll('.vis-text').classList.add('TLDark');
+        // let versionText = jQuery('.vis-text', '.vis-time-axis').attr("style", "color: white !important;");
+        // let versionText = jQuery('.vis-text', '.vis-time-axis').attr("style", "color: white !important;position: absolute;padding: 3px;overflow: hidden;box-sizing: border-box;white-space: nowrap;");
+        // let TL = jQuery('#timeline').children().attr('class', 'TLDark');
+        // let TLgridText = document.querySelectorAll('.vis-text>*');
+        // TLgridText.forEach((el: HTMLDivElement) => {
+        //     el.classList.add('TLDark');
         // });
+        let TLGrid = document.querySelector('.vis-time-axis.vis-foreground') as HTMLDivElement;
+        let TLGrid_els = TLGrid.querySelectorAll(":scope > .vis-text");
+        TLGrid_els.forEach((el: HTMLDivElement) => {
+            el.classList.add('TLDark');
+        });
+
         // Timeline Label
         let tlLabel = document.querySelectorAll('.vis-label');
         tlLabel.forEach((el: HTMLElement) => {

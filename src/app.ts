@@ -616,7 +616,7 @@ export class App {
                                 label: "Dark Mode",
                                 onChange: (item) => {
                                     darkMode(item ? true : false);
-                                    this._Timeline = new TimeLine(el).redraw();
+                                    this._Timeline = new TimeLine(el).redraw(item ? true : false);
 
                                 },
                                 name: "drkmde"
@@ -898,18 +898,18 @@ function darkMode(flag: boolean) {
             el.classList.add('btn-outline-light');
         });
 
-        // Timeline grid Text
-        let TLgridText = document.querySelectorAll('.vis-text');
-        TLgridText.forEach((el: HTMLElement) => {
-            el.classList.add('TLDark');
-        });
-        // Timeline Label
-        let tlLabel = document.querySelectorAll('.vis-label');
-        tlLabel.forEach((el: HTMLElement) => {
-            el.classList.add('TLDark');
-        });
+        // // Timeline grid Text
+        // let TLgridText = document.querySelectorAll('.vis-text');
+        // TLgridText.forEach((el: HTMLElement) => {
+        //     el.classList.add('TLDark');
+        // });
+        // // Timeline Label
+        // let tlLabel = document.querySelectorAll('.vis-label');
+        // tlLabel.forEach((el: HTMLElement) => {
+        //     el.classList.add('TLDark');
+        // });
         // Timeline grid Text color change
-        let grid = jQuery('.vis-text', '.vis-time-axis').attr("style", "color: white !important;position: absolute;padding: 3px;overflow: hidden;box-sizing: border-box;white-space: nowrap;");
+        // let grid = jQuery('.vis-text', '.vis-time-axis').attr("style", "color: white !important;position: absolute;padding: 3px;overflow: hidden;box-sizing: border-box;white-space: nowrap;");
 
         App._isDarkMode = true;
 
@@ -956,23 +956,20 @@ function darkMode(flag: boolean) {
         sixmoBtn.classList.remove('btn-outline-light');
         sixmoBtn.classList.add('btn-outline-dark');
 
-        // Timeline grid Text
-        let TLgridText = document.querySelectorAll('.vis-text');
-        TLgridText.forEach((el: HTMLElement) => {
-            el.classList.remove('TLDark');
-        });
-        // Timeline Label
-        let tlLabel = document.querySelectorAll('.vis-label');
-        tlLabel.forEach((el: HTMLElement) => {
-            el.classList.remove('TLDark');
-        });
+        // // Timeline grid Text
+        // let TLgridText = document.querySelectorAll('.vis-text');
+        // TLgridText.forEach((el: HTMLElement) => {
+        //     el.classList.remove('TLDark');
+        // });
+        // // Timeline Label
+        // let tlLabel = document.querySelectorAll('.vis-label');
+        // tlLabel.forEach((el: HTMLElement) => {
+        //     el.classList.remove('TLDark');
+        // });
 
     }
 }
-// function TLredraw(timeline: TimeLine) {
-//     // Refesh Timeline
-//     timeline.redraw();
-// }
+
 
 
 

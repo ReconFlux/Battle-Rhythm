@@ -269,7 +269,7 @@ export class DataSource {
         // options.end = moment(today.add(2, "month")).format('YYYY/MM/DD');
         options.end = moment().endOf('month').format('YYYY/MM/DD');
         options.zoomable = false;
-        options.orientation = "both";
+        options.orientation = "top";
         options.maxHeight = 900;
         options.zoomMin = 1000 * 60 * 60 * 24; // one day in milliseconds
 
