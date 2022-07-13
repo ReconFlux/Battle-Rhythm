@@ -6,6 +6,7 @@ import { ItemDisplayForm } from "../Forms/ItemDisplayForm";
 import { IDateRange, App } from "../app";
 import { Components } from "gd-sprest-bs";
 import * as jQuery from "jquery";
+import { CustomFunction } from "sass";
 
 /**
  * Timeline
@@ -257,9 +258,12 @@ export class TimeLine {
             });
 
             this.Timeline.on("rangechanged", () => {
-                // Check if its on Darkmode
-                // Darkmode();
-                // this.refresh();
+                // this._timeline.itemsData.update(this._items);
+            });
+
+            this.Timeline.on("changed", () => {
+                this._timeline.itemsData.update(this._items);
+                Darkmode();
             });
 
 
@@ -312,12 +316,12 @@ export class TimeLine {
 
         if (flag == true) {
 
-            console.log('pass: TRUE');
-            Darkmode();
-            this.refresh();
+            console.log('Redraw pass: TRUE: Run Darkmode Func');
+            // Darkmode();
+            // this.refresh();
 
         } else {
-            console.log('pass: FALSE');
+            console.log('Redraw pass: FALSE: Run Darkmode Func');
         }
 
 
@@ -366,6 +370,7 @@ function Darkmode() {
         let TLGrid_els = TLGrid.querySelectorAll(":scope > .vis-text");
         TLGrid_els.forEach((el: HTMLDivElement) => {
             el.classList.add('TLDark');
+            el.style.color = "white !important";
         });
 
         // Timeline Label
@@ -377,10 +382,11 @@ function Darkmode() {
     } else if (value == false) { // Check if Darkmode is off
         console.log(value);
         // Timeline grid Text color change
-        let versionText = jQuery('.vis-text', '.vis-time-axis').attr("style", "color: black !important;position: absolute;padding: 3px;overflow: hidden;box-sizing: border-box;white-space: nowrap;");
+        // let versionText = jQuery('.vis-text', '.vis-time-axis').attr("style", "color: black !important;position: absolute;padding: 3px;overflow: hidden;box-sizing: border-box;white-space: nowrap;");
         let tlLabel = document.querySelectorAll('.vis-label');
         tlLabel.forEach((el: HTMLElement) => {
             el.classList.remove('TLDark');
         });
+
     }
 }
