@@ -262,17 +262,11 @@ export class TimeLine {
             });
 
             this.Timeline.on("changed", () => {
+                // Update the items and position
                 this._timeline.itemsData.update(this._items);
+                // Check to see if we are in dark mode
                 Darkmode();
             });
-
-
-            // TEST
-            // this.Timeline.on("currentTimeTick", () => {
-            //     this.Timeline.redraw();
-            // });
-
-
 
         } else if (this._items.length == 0) {
             Components.Card({
@@ -310,23 +304,6 @@ export class TimeLine {
         loadTabColors();
     }
 
-
-    public redraw(flag: boolean) {
-
-
-        if (flag == true) {
-
-            console.log('Redraw pass: TRUE: Run Darkmode Func');
-            // Darkmode();
-            // this.refresh();
-
-        } else {
-            console.log('Redraw pass: FALSE: Run Darkmode Func');
-        }
-
-
-    }
-
 }
 function loadTabColors() {
     let Settings = DataSource.Settings[0];
@@ -352,20 +329,11 @@ function loadTabColors() {
 
 }
 function Darkmode() {
+    // Grab the boolean flag in the main class
     let value = App._isDarkMode as boolean;
-    console.log(value);
     // If checked
     if (value == true) {
-        console.log(value);
         // Timeline grid Text color change
-        // document.querySelectorAll('.vis-text').classList.add('TLDark');
-        // let versionText = jQuery('.vis-text', '.vis-time-axis').attr("style", "color: white !important;");
-        // let versionText = jQuery('.vis-text', '.vis-time-axis').attr("style", "color: white !important;position: absolute;padding: 3px;overflow: hidden;box-sizing: border-box;white-space: nowrap;");
-        // let TL = jQuery('#timeline').children().attr('class', 'TLDark');
-        // let TLgridText = document.querySelectorAll('.vis-text>*');
-        // TLgridText.forEach((el: HTMLDivElement) => {
-        //     el.classList.add('TLDark');
-        // });
         let TLGrid = document.querySelector('.vis-time-axis.vis-foreground') as HTMLDivElement;
         let TLGrid_els = TLGrid.querySelectorAll(":scope > .vis-text");
         TLGrid_els.forEach((el: HTMLDivElement) => {
@@ -380,9 +348,7 @@ function Darkmode() {
         });
         // this.Timeline.redraw();
     } else if (value == false) { // Check if Darkmode is off
-        console.log(value);
         // Timeline grid Text color change
-        // let versionText = jQuery('.vis-text', '.vis-time-axis').attr("style", "color: black !important;position: absolute;padding: 3px;overflow: hidden;box-sizing: border-box;white-space: nowrap;");
         let tlLabel = document.querySelectorAll('.vis-label');
         tlLabel.forEach((el: HTMLElement) => {
             el.classList.remove('TLDark');

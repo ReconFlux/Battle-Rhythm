@@ -91,10 +91,7 @@ export class App {
     private _Settings: ISetting;
     static _isDarkMode: boolean = false;
 
-
     get _Timeline() { return this._timeline }
-
-
 
     // Constructor
     constructor(el: HTMLElement) {
@@ -615,8 +612,8 @@ export class App {
                             {
                                 label: "Dark Mode",
                                 onChange: (item) => {
+                                    // Fires the dark mode function for this class and the timeline
                                     darkMode(item ? true : false);
-                                    this._Timeline = new TimeLine(el).redraw(item ? true : false);
 
                                 },
                                 name: "drkmde"
@@ -871,6 +868,8 @@ function darkMode(flag: boolean) {
 
     if (flag == true) {
 
+
+        // Set all components with the dark class.
         let workspace = document.querySelector("#s4-workspace");
         workspace.classList.add("dark");
         let tableheaders = jQuery('td', '#DataTables_Table_0').addClass("dark");
@@ -879,7 +878,6 @@ function darkMode(flag: boolean) {
         let icons = jQuery('svg', ".btn-icon").addClass("dark");
         let footer = jQuery('.navbar', '#footer').attr("style", "background-color: #444 !important");
         let subNav = jQuery('.navbar', '#SubNav').attr("style", "background-color: #444 !important");
-        // let switchText = jQuery('label', 'form-check-label').addClass("dark");
         let switchText = document.querySelector('label.form-check-label');
         switchText.setAttribute('style', 'color: white');
         let navBrand = jQuery('.navbar-brand', '.container-fluid').attr("style", "color: white !important");
@@ -898,27 +896,16 @@ function darkMode(flag: boolean) {
             el.classList.add('btn-outline-light');
         });
 
-        // // Timeline grid Text
-        // let TLgridText = document.querySelectorAll('.vis-text');
-        // TLgridText.forEach((el: HTMLElement) => {
-        //     el.classList.add('TLDark');
-        // });
-        // // Timeline Label
-        // let tlLabel = document.querySelectorAll('.vis-label');
-        // tlLabel.forEach((el: HTMLElement) => {
-        //     el.classList.add('TLDark');
-        // });
-        // Timeline grid Text color change
-        // let grid = jQuery('.vis-text', '.vis-time-axis').attr("style", "color: white !important;position: absolute;padding: 3px;overflow: hidden;box-sizing: border-box;white-space: nowrap;");
-
+        // Set the Flag
         App._isDarkMode = true;
 
     }
     else if (flag == false) {
 
-
+        // Set the flag
         App._isDarkMode = false;
 
+        // Return all components to normal
         let workspace = document.querySelector("#s4-workspace");
         workspace.classList.remove("dark");
         let tableheaders = jQuery('td', '#DataTables_Table_0').removeClass("dark");
@@ -955,18 +942,6 @@ function darkMode(flag: boolean) {
         let sixmoBtn = document.querySelector('.Sixmo-btn');
         sixmoBtn.classList.remove('btn-outline-light');
         sixmoBtn.classList.add('btn-outline-dark');
-
-        // // Timeline grid Text
-        // let TLgridText = document.querySelectorAll('.vis-text');
-        // TLgridText.forEach((el: HTMLElement) => {
-        //     el.classList.remove('TLDark');
-        // });
-        // // Timeline Label
-        // let tlLabel = document.querySelectorAll('.vis-label');
-        // tlLabel.forEach((el: HTMLElement) => {
-        //     el.classList.remove('TLDark');
-        // });
-
     }
 }
 
