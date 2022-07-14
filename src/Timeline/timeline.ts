@@ -346,13 +346,21 @@ function Darkmode() {
         tlLabel.forEach((el: HTMLElement) => {
             el.classList.add('TLDark');
         });
-        // this.Timeline.redraw();
+
+        // Legend Body
+        let legend_Body = jQuery('#legendBody').attr('style', 'background-color: #323232');
+        // Legend Head
+        let legend_Head = jQuery('#legendHead').attr('style', 'color: white;background-color: #000;')
     } else if (value == false) { // Check if Darkmode is off
         // Timeline grid Text color change
         let tlLabel = document.querySelectorAll('.vis-label');
         tlLabel.forEach((el: HTMLElement) => {
             el.classList.remove('TLDark');
         });
+        // Legend Body
+        let legend_Body = jQuery('#legendBody').removeAttr('style', 'background-color: #323232');
+        // Legend Head
+        let legend_Head = jQuery('#legendHead').removeAttr('style', 'color: white;background-color: #000;')
 
     }
 }
