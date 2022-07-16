@@ -170,8 +170,6 @@ export class TimeLine {
 
             // Append the Events
             this._items = this._items.concat(Events);
-
-
         }
     }
 
