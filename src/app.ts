@@ -540,7 +540,7 @@ export class App {
                                 }
                             },
                             {
-                                text: "Priorities",
+                                text: "Objectives",
                                 iconSize: 18,
                                 iconClassName: "me-3",
                                 iconType: wrenchAdjustable,
@@ -549,7 +549,7 @@ export class App {
                                     Helper.SP.ModalDialog.showModalDialog({
                                         allowMaximize: false,
                                         showMaximized: true,
-                                        url: Strings.Priorities
+                                        url: Strings.Objectives
                                     });
                                 }
                             },
@@ -709,8 +709,8 @@ export class App {
                         title: "Event Name"
                     },
                     {
-                        name: "Priorities",
-                        title: "Priorities"
+                        name: "Objectives",
+                        title: "Objectives"
                     },
                     {
                         name: "LinesOfEffort",

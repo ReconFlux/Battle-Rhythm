@@ -277,7 +277,7 @@ export class ItemDisplayForm {
                 <div class="row mt-3">
                     <div class="col">
                         <h6 class="fw-bold text-black">Priority:</h6>
-                        <p class=" m-0">${this._item.Priorities}</p>
+                        <p class=" m-0">${this._item.Objectives}</p>
                     </div>
                     <div class="col">
                         <h6 class="fw-bold text-black">Facilitator:</h6>

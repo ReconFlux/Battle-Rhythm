@@ -17,7 +17,7 @@ const Strings = {
 
     // TODO - Making the List Settings URL Dynamic
     LineOfEfforts: ContextInfo.webServerRelativeUrl + "/_layouts/15/FldEdit.aspx?List=%7B24613378-6DC2-4604-B24F-992E0DC64A50%7D&Field=LinesOfEffort", // Static URL
-    Priorities: ContextInfo.webServerRelativeUrl + "/_layouts/15/FldEdit.aspx?List=%7B24613378-6DC2-4604-B24F-992E0DC64A50%7D&Field=Priorities", // Static URL
+    Objectives: ContextInfo.webServerRelativeUrl + "/_layouts/15/FldEdit.aspx?List=%7B24613378-6DC2-4604-B24F-992E0DC64A50%7D&Field=Objectives", // Static URL
     ProjectName: "Battle Rhythm",
     ProjectDescription: "A custom sharepoint application that provides information collaboration for leadership, objectives, and goals into a Dahboard view and timeline.",
     Lists: {

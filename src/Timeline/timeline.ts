@@ -80,6 +80,57 @@ export class TimeLine {
         this._isHidden = false;
     }
 
+    // // Loads the groups
+    // private loadGroups() {
+    //     let groups: any[] = null;
+
+    //     let groupNames = {};
+    //     let grOrder = 1;
+    //     // Clear the groups
+    //     groups = [];
+
+    //     // Parse the visible items
+    //     let items = this._view.get();
+    //     for (let i = 0; i < items.length; i++) {
+    //         let item = items[i];
+
+    //         // Save the group name
+    //         if (item.group) { groupNames[item.group] = true; }
+    //     }
+
+
+    //     // Parse the group names
+    //     for (let groupName in groupNames) {
+    //         // set the group style for calendar events
+    //         switch (groupName) {
+    //             case "Readiness":
+    //                 grOrder = 1;
+    //                 break;
+    //             case "Processes":
+    //                 grOrder = 2;
+    //                 break;
+    //             case "Community":
+    //                 grOrder = 3;
+    //                 break;
+    //         }
+
+    //         // Ensure the group exists
+    //         if (groupName)
+    //             // Add the group
+    //             groups.push({
+    //                 id: groupName,
+    //                 className: groupName,
+    //                 content: groupName,
+    //                 order: grOrder
+    //             });
+    //     }
+
+    //     // Update the groups
+    //     groups = groups.length > 0 ? groups : null;
+
+    //     // Return the groups
+    //     return groups;
+    // }
     // Loads the groups
     private loadGroups() {
         let groups: any[] = null;
@@ -101,18 +152,6 @@ export class TimeLine {
 
         // Parse the group names
         for (let groupName in groupNames) {
-            // set the group style for calendar events
-            switch (groupName) {
-                case "Readiness":
-                    grOrder = 1;
-                    break;
-                case "Processes":
-                    grOrder = 2;
-                    break;
-                case "Community":
-                    grOrder = 3;
-                    break;
-            }
 
             // Ensure the group exists
             if (groupName)
@@ -125,7 +164,7 @@ export class TimeLine {
                 });
         }
 
-        // Update the groups
+        // // Update the groups
         groups = groups.length > 0 ? groups : null;
 
         // Return the groups
@@ -156,7 +195,7 @@ export class TimeLine {
                         item,
                         id: "Event_" + item.Id,
                         className: "Itemclass_" + getFieldValue("LinesOfEffort", item),
-                        group: getFieldValue("Priorities", item),
+                        group: getFieldValue("Objectives", item),
                         content: item.Title,
                         title: item.Title,
                         start: formatDateValue(startDate),
@@ -225,6 +264,7 @@ export class TimeLine {
 
             // Initialize the timeline
             this._timeline = new Timeline(this._el, this._view, this.loadGroups(), DataSource.TimelineOptions);
+            // this._timeline = new Timeline(this._el, this._view, DataSource.TimelineOptions);
 
             // Onclick event
             this._timeline.on("click", (props) => {
@@ -304,6 +344,9 @@ export class TimeLine {
 
 }
 function loadTabColors() {
+
+    
+
     let Settings = DataSource.Settings[0];
     let TAB_CurrentMission = document.querySelectorAll(".Itemclass_Current");
     for (var i = 0; i < TAB_CurrentMission.length; i++) {

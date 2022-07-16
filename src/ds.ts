@@ -7,7 +7,7 @@ import { formatDateValue } from "./common";
 
 // Item
 export interface IItem extends Types.SP.ListItem {
-    Priorities: string;
+    Objectives: string;
     Status: string;
     LinesOfEffort: string;
     BLUF: string;
@@ -65,7 +65,7 @@ export interface IConfiguration {
     };
     settingslink: {
         LOEs: string;
-        Priorities: string;
+        Objectives: string;
     }
 
 }
@@ -317,14 +317,14 @@ export class DataSource {
         });
     }
 
-    // Priorities Filters
+    // Objectives Filters
     private static _priorityFilters: Components.ICheckboxGroupItem[] = null;
     static get priorityFilters(): Components.ICheckboxGroupItem[] { return this._priorityFilters; }
     static loadPriorityFilters(): PromiseLike<Components.ICheckboxGroupItem[]> {
         // Return a promise
         return new Promise((resolve, reject) => {
             // Get the status field
-            List(Strings.Lists.BREvents).Fields("Priorities").execute((fld: Types.SP.FieldChoice) => {
+            List(Strings.Lists.BREvents).Fields("Objectives").execute((fld: Types.SP.FieldChoice) => {
                 let items: Components.ICheckboxGroupItem[] = [];
 
                 // Parse the choices

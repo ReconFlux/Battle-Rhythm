@@ -17,7 +17,7 @@ export const Configuration = Helper.SPConfig({
                 {
                     Name: "Event",
                     FieldRefs: [
-                        "AssignedTo", "Priorities", "Status", "LinesOfEffort", "StartDate", "EndDate", "Location", "Description"
+                        "AssignedTo", "Objectives", "Status", "LinesOfEffort", "StartDate", "EndDate", "Location", "Description"
                     ]
                 }
             ],
@@ -45,22 +45,22 @@ export const Configuration = Helper.SPConfig({
                     ]
                 } as Helper.IFieldInfoChoice,
                 {
-                    name: "Priorities",
-                    title: "Priorities",
+                    name: "Objectives",
+                    title: "Objectives",
                     type: Helper.SPCfgFieldType.Choice,
                     choices: [
-                        "Out of Office",
-                        "Community",
-                        "Mission",
-                        "Processes",
-                        "Readiness"
+                        "Objective 1",
+                        "Objective 2",
+                        "Objective 3",
+                        "Objective 4",
+                        "Objective 5"
                     ]
                 } as Helper.IFieldInfoChoice,
                 {
                     name: "LinesOfEffort",
                     title: "LinesOfEffort",
                     type: Helper.SPCfgFieldType.Choice,
-                    choices: ["Current Mission", "Future Mission", "Enable Mission Partner Success", "Airmen and Campus"]
+                    choices: ["LOE A", "LOE B", "LOE C", "LOE D"]
                 } as Helper.IFieldInfoChoice,
                 // Start Date
                 {
@@ -107,7 +107,7 @@ export const Configuration = Helper.SPConfig({
                 {
                     ViewName: "All Events",
                     ViewFields: [
-                        "AssignedTo", "Status", "LinesOfEffort", "StartDate", "EndDate", "Location", "BLUF", "Members", "Priorities"
+                        "AssignedTo", "Status", "LinesOfEffort", "StartDate", "EndDate", "Location", "BLUF", "Members", "Objectives"
                     ]
                 }
             ]
