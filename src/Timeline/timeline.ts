@@ -4,10 +4,10 @@ import { formatDateValue, getFieldValue } from "../common";
 import { DataSource } from "../ds";
 import { ItemDisplayForm } from "../Forms/ItemDisplayForm";
 import { IDateRange, App } from "../app";
-import { Components } from "gd-sprest-bs";
+import { Components, List, Types } from "gd-sprest-bs";
 import * as jQuery from "jquery";
 import { CustomFunction } from "sass";
-
+import Strings from "../strings";
 /**
  * Timeline
  */
@@ -27,6 +27,7 @@ export class TimeLine {
     private _timeline = null;
     get Timeline() { return this._timeline; }
     get isHidden() { return this._isHidden; }
+    get items() { return this._items; }
 
     // Constructor
     constructor(el: HTMLElement) {
@@ -345,30 +346,51 @@ export class TimeLine {
 }
 function loadTabColors() {
 
-    
+    const _LOEs = []
 
-    let Settings = DataSource.Settings[0];
-    let TAB_CurrentMission = document.querySelectorAll(".Itemclass_Current");
-    for (var i = 0; i < TAB_CurrentMission.length; i++) {
-        TAB_CurrentMission[i].setAttribute("style", `border-left-color: ${Settings.legend_LOE_Current} !important`);
-    }
+    // Return a promise
+    return new Promise((resolve, reject) => {
+        // Get the status field
+        List(Strings.Lists.BREvents).Fields("LinesOfEffort").execute((fld: Types.SP.FieldChoice) => {
 
-    let TAB_FutureMission = document.querySelectorAll(".Itemclass_Future");
-    for (var i = 0; i < TAB_FutureMission.length; i++) {
-        TAB_FutureMission[i].setAttribute("style", `border-left-color: ${Settings.legend_LOE_Future} !important`);
-    }
 
-    let TAB_EnableMission = document.querySelectorAll(".Itemclass_Enable");
-    for (var i = 0; i < TAB_EnableMission.length; i++) {
-        TAB_EnableMission[i].setAttribute("style", `border-left-color: ${Settings.legend_LOE_Enable} !important`);
-    }
+            // Parse the choices
+            for (let i = 0; i < fld.Choices.results.length; i++) {
+                // Add choices to an array
+                _LOEs.push("Itemclass_" + fld.Choices.results[i]);
+            }
 
-    let TAB_AirmenCampus = document.querySelectorAll(".Itemclass_Airmen");
-    for (var i = 0; i < TAB_AirmenCampus.length; i++) {
-        TAB_AirmenCampus[i].setAttribute("style", `border-left-color: ${Settings.legend_LOE_Airmen} !important`);
-    }
+            resolve(_LOEs);
+        }, reject);
+    });
+
+    // let Settings = DataSource.Settings[0];
+    // let TAB_CurrentMission = document.querySelectorAll(".Itemclass_Current");
+    // for (var i = 0; i < TAB_CurrentMission.length; i++) {
+    //     TAB_CurrentMission[i].setAttribute("style", `border-left-color: ${Settings.legend_LOE_Current} !important`);
+    // }
+
+    // let TAB_FutureMission = document.querySelectorAll(".Itemclass_Future");
+    // for (var i = 0; i < TAB_FutureMission.length; i++) {
+    //     TAB_FutureMission[i].setAttribute("style", `border-left-color: ${Settings.legend_LOE_Future} !important`);
+    // }
+
+    // let TAB_EnableMission = document.querySelectorAll(".Itemclass_Enable");
+    // for (var i = 0; i < TAB_EnableMission.length; i++) {
+    //     TAB_EnableMission[i].setAttribute("style", `border-left-color: ${Settings.legend_LOE_Enable} !important`);
+    // }
+
+    // let TAB_AirmenCampus = document.querySelectorAll(".Itemclass_Airmen");
+    // for (var i = 0; i < TAB_AirmenCampus.length; i++) {
+    //     TAB_AirmenCampus[i].setAttribute("style", `border-left-color: ${Settings.legend_LOE_Airmen} !important`);
+    // }
 
 }
+
+function TabColorLogic(){
+}
+
+
 function Darkmode() {
     // Grab the boolean flag in the main class
     let value = App._isDarkMode as boolean;
@@ -405,3 +427,5 @@ function Darkmode() {
 
     }
 }
+
+
