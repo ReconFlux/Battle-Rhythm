@@ -25,15 +25,19 @@ export class CustomLegend {
                         if (field.InternalName == "legend_LOE_Current") {
                             // Update the control
                             (ctrl as any as Components.IFormControlProps).type = Components.FormControlTypes.ColorPicker;
+                            ctrl.label = `${DataSource.Tabitems[0]}`;
                         } else if (field.InternalName == "legend_LOE_Future") {
                             // Update the control
                             (ctrl as any as Components.IFormControlProps).type = Components.FormControlTypes.ColorPicker;
+                            ctrl.label = `${DataSource.Tabitems[1]}`;
                         } else if (field.InternalName == "legend_LOE_Enable") {
                             // Update the control
                             (ctrl as any as Components.IFormControlProps).type = Components.FormControlTypes.ColorPicker;
+                            ctrl.label = `${DataSource.Tabitems[2]}`;
                         } else if (field.InternalName == "legend_LOE_Airmen") {
                             // Update the control
                             (ctrl as any as Components.IFormControlProps).type = Components.FormControlTypes.ColorPicker;
+                            ctrl.label = `${DataSource.Tabitems[3]}`;
                         }
 
                     }
