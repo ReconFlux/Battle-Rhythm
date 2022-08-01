@@ -11,6 +11,10 @@ import Strings from "../strings";
 /**
  * Timeline
  */
+export interface TabItem {
+    name: string;
+}
+
 export class TimeLine {
 
     private _el: HTMLElement = null;
@@ -22,6 +26,7 @@ export class TimeLine {
     private _isHidden: Boolean = false;
     private _elDisplayForm: HTMLElement = null;
     private _drkbtn: HTMLInputElement = null;
+
 
     // Timeline
     private _timeline = null;
@@ -343,26 +348,29 @@ export class TimeLine {
         loadTabColors();
     }
 
+    private static _choicefields: TabItem[] = null;
+    static get TabTitems(): TabItem[] { return this._choicefields };
+
 }
 function loadTabColors() {
 
-    const _LOEs = []
+    // const _LOEs = []
 
-    // Return a promise
-    return new Promise((resolve, reject) => {
-        // Get the status field
-        List(Strings.Lists.BREvents).Fields("LinesOfEffort").execute((fld: Types.SP.FieldChoice) => {
+    // // Return a promise
+    // return new Promise((resolve, reject) => {
+    //     // Get the status field
+    //     List(Strings.Lists.BREvents).Fields("LinesOfEffort").execute((fld: Types.SP.FieldChoice) => {
 
 
-            // Parse the choices
-            for (let i = 0; i < fld.Choices.results.length; i++) {
-                // Add choices to an array
-                _LOEs.push("Itemclass_" + fld.Choices.results[i]);
-            }
+    //         // Parse the choices
+    //         for (let i = 0; i < fld.Choices.results.length; i++) {
+    //             // Add choices to an array
+    //             _LOEs.push("Itemclass_" + fld.Choices.results[i]);
+    //         }
 
-            resolve(_LOEs);
-        }, reject);
-    });
+    //         resolve(_LOEs);
+    //     }, reject);
+    // });
 
     // let Settings = DataSource.Settings[0];
     // let TAB_CurrentMission = document.querySelectorAll(".Itemclass_Current");
@@ -385,10 +393,12 @@ function loadTabColors() {
     //     TAB_AirmenCampus[i].setAttribute("style", `border-left-color: ${Settings.legend_LOE_Airmen} !important`);
     // }
 
+    // console.log(DataSource.Tabitems);
+
 }
 
-function TabColorLogic(){
-}
+// function TabColorLogic() {
+// }
 
 
 function Darkmode() {

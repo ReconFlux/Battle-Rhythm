@@ -70,6 +70,10 @@ export interface IConfiguration {
 
 }
 
+//Tab Colors Interface
+export interface TabItem {
+}
+
 
 
 /**
@@ -95,8 +99,10 @@ export class DataSource {
                                 this.loadPriorityFilters().then(() => {
                                     // Load the LOE Filters
                                     this.LoadLOEFilters().then(() => {
-                                        // Resolve the request
-                                        resolve();
+                                        this.loadTabColors().then(() => {
+                                            // Resolve the request
+                                            resolve();
+                                        }, reject);
                                     }, reject);
                                 }, reject);
                             }, reject);
@@ -370,4 +376,29 @@ export class DataSource {
             }, reject);
         });
     }
+
+    // Tab Colors
+    private static _itemTabs: TabItem[] = null;
+    static get Tabitems(): TabItem[] { return this._itemTabs };
+    static loadTabColors(): PromiseLike<TabItem[]> {
+
+        return new Promise((resolve, reject) => {
+
+            this._itemTabs = [];
+
+            // Get the status field
+            List(Strings.Lists.BREvents).Fields("LinesOfEffort").execute((fld: Types.SP.FieldChoice) => {
+
+                // Parse the choices
+                for (let i = 0; i < fld.Choices.results.length; i++) {
+                    // Add choices to an array
+                    this.Tabitems.push("Itemclass_" + fld.Choices.results[i]);
+                }
+
+
+                resolve(this.Tabitems);
+            }, reject);
+        });
+    }
+
 }

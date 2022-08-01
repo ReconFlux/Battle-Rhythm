@@ -17,7 +17,7 @@ export class Legend {
 
     private render(el: HTMLElement) {
         let Settings = DataSource.Settings[0];
-        console.log(this.LOEs);
+        console.log("LEGEND:" + this.LOEs);
         Components.Toast({
             el,
             className: "Legend_Toast hide d-none",
@@ -53,16 +53,16 @@ export class Legend {
                             let Settings = DataSource.Settings[0];
                             switch (_choiceElements.id = `rect_${fld.Choices.results[i]}`) {
 
-                                case "rect_Current Mission":
+                                case "rect_" + fld.Choices.results[0]:
                                     _choiceElements.setAttribute("style", `border-left-color: ${Settings.legend_LOE_Current}`);
                                     break;
-                                case "rect_Future Mission":
+                                case "rect_" + fld.Choices.results[1]:
                                     _choiceElements.setAttribute("style", `border-left-color: ${Settings.legend_LOE_Future}`);
                                     break;
-                                case "rect_Enable Mission Partner Success":
+                                case "rect_" + fld.Choices.results[2]:
                                     _choiceElements.setAttribute("style", `border-left-color: ${Settings.legend_LOE_Enable}`);
                                     break;
-                                case "rect_Airmen and Campus":
+                                case "rect_" + fld.Choices.results[3]:
                                     _choiceElements.setAttribute("style", `border-left-color: ${Settings.legend_LOE_Airmen}`);
                                 default:
                                     break;
@@ -98,10 +98,10 @@ function dragElement() {
     let Container = document.getElementById('_invisibleIfEmpty');
     let dragItem = document.getElementById('Legend');
 
-    // Test
-    dragItem.onmouseover = function () {
-        console.log('mouse hover');
-    }
+    // // Test
+    // dragItem.onmouseover = function () {
+    //     console.log('mouse hover');
+    // }
 
     //Make the DIV element draggagle:
     dragElement(document.getElementById("Legend"));
