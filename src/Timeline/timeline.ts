@@ -354,6 +354,54 @@ export class TimeLine {
 }
 function loadTabColors() {
 
+
+    let classes = DataSource.Tabitems;
+    let Settings = DataSource.Settings[0];
+
+    let tabs = document.querySelectorAll('.vis-readonly');
+    for (var i = 0; i < tabs.length; i++) {
+        tabs[i].setAttribute("style", `border-left-width: 1rem !important`);
+    }
+
+
+
+
+    let TAB_CurrentMission = document.querySelectorAll(`${"." + classes[0]}`);
+    for (var i = 0; i < TAB_CurrentMission.length; i++) {
+        TAB_CurrentMission[i].setAttribute("style", `border-left-color: ${Settings.legend_LOE_Current} !important; border-left-width: 1rem !important`);
+    }
+
+    let TAB_FutureMission = document.querySelectorAll(`${"." + classes[1]}`);
+    for (var i = 0; i < TAB_FutureMission.length; i++) {
+        TAB_FutureMission[i].setAttribute("style", `border-left-color: ${Settings.legend_LOE_Future} !important; border-left-width: 1rem !important`);
+    }
+
+    let TAB_EnableMission = document.querySelectorAll(`${"." + classes[2]}`);
+    for (var i = 0; i < TAB_EnableMission.length; i++) {
+        TAB_EnableMission[i].setAttribute("style", `border-left-color: ${Settings.legend_LOE_Enable} !important; border-left-width: 1rem !important`);
+    }
+
+    let TAB_AirmenCampus = document.querySelectorAll(`${"." + classes[3]}`);
+    for (var i = 0; i < TAB_AirmenCampus.length; i++) {
+        TAB_AirmenCampus[i].setAttribute("style", `border-left-color: ${Settings.legend_LOE_Airmen} !important; border-left-width: 1rem !important`);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // const _LOEs = []
 
     // // Return a promise
