@@ -21,6 +21,7 @@ import { palette } from "gd-sprest-bs/build/icons/svgs/palette";
 import { wrenchAdjustable } from "gd-sprest-bs/build/icons/svgs/wrenchAdjustable";
 import { questionSquare } from "gd-sprest-bs/build/icons/svgs/questionSquare";
 import { infoSquare } from "gd-sprest-bs/build/icons/svgs/infoSquare";
+import { Navbar } from "gd-sprest-bs/src/components/components";
 
 
 /**
@@ -28,8 +29,6 @@ import { infoSquare } from "gd-sprest-bs/build/icons/svgs/infoSquare";
  */
 
 export class App {
-    private _dashboard: Dashboard = null;
-
     // Constructor
     constructor(el: HTMLElement) {
         ItemForm.ListName = Strings.Lists.BREvents;
@@ -40,12 +39,28 @@ export class App {
     }
 
     private render(el: HTMLElement) {
-        this._dashboard = new Dashboard({
+        let navBar = Navbar({
             el,
-            hideHeader: true,
-            useModal: false,
+            brand: Strings.ProjectName,
+            brandUrl: "",
+            enableSearch: false,
+            items: [
+                {
+                    text: "307th Force Support Squadron",
+                    href: "URL Here"
+                },
+                {
+                    text: "TEXT HERE",
+                    items: [
+                        {
+                            text: "NAME",
+                            href: "URL"
+                        }
+                    ]
+                }
+            ]
 
-        })
+        });
 
 
 
