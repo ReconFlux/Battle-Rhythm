@@ -41,7 +41,10 @@ export class App {
 
     private render(el: HTMLElement) {
         this._dashboard = new Dashboard({
-            el
+            el,
+            hideHeader: true,
+            useModal: false,
+
         })
 
 
