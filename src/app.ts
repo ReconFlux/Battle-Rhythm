@@ -56,117 +56,117 @@ export class App {
                 },
                 {
                     text: "307th Cyberspace Support Flight",
-                    href: " ",
+                    href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/CF/SitePages/307th%20Cyberspace%20Support%20Flight.aspx",
                     items: [
                         {
                             text: "Home",
                             href: ""
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "Self-Help",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/CF/SitePages/Self-Help.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "Helpful Links",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/CF/SitePages/Customer%20Self-Help%20Documents.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "Submit Ticket",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/CF/SitePages/Submit%20Ticket.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "FAQ's",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/CF/FAQs/Forms/AllItems.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "SCO - Operations",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/CF/SCO/SitePages/Home.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "SCOK - Knowledge Management Operations",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/CF/SCOK/SitePages/Home.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "SCOO - Network Operations",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/CF/SCOO/SitePages/Home.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "SCOS - Client Systems",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/CF/SCOS/SitePages/Home.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "SCO - Telecommunications",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/CF/TELECOM/SitePages/Home.aspx"
                         }
                     ]
                 },
                 {
                     text: "307th Services Flight",
-                    href: " "
+                    href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/SVF/SitePages/Home.aspx"
                 },
                 {
                     text: "Airman and Family Readiness",
-                    href: " "
+                    href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/AmnandFamilyReadiness/SitePages/Home.aspx"
                 },
                 {
                     text: "Civilian Personnel Liaison",
-                    href: " ",
+                    href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/CivilianLiaison/SitePages/Home.aspx",
                     items: [
                         {
-                            text: "",
-                            href: ""
+                            text: "ART PD Library",
+                            href: "https://usaf.dps.mil/teams/11387/SitePages/Home.aspx"
                         }
                     ]
                 },
                 {
                     text: "Manpower",
-                    href: " ",
+                    href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/Manpower/SitePages/Home.aspx",
                     items: [
                         {
-                            text: "",
-                            href: ""
+                            text: "Unit Manpower Document",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/Manpower/Shared%20Documents/Unit%20Manpower%20Document"
                         }
                     ]
                 },
                 {
                     text: "Military Personnel Flight",
-                    href: " ",
+                    href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/MPF/SitePages/Home.aspx",
                     items: [
                         {
-                            text: "",
-                            href: ""
+                            text: "307 FSS PSM",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/MPF/PSM/SitePages/Home.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "AGR",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/MPF/AGR/SitePages/Home.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "Career Development",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/MPF/CareerDevelopment/SitePages/Home.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "CSS Toolkit",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/MPF/CSSToolkit/SitePages/Home.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "CSS Training",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/MPF/CSStraining/SitePages/Home.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "Customer Support",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/MPF/Customer%20Support/SitePages/Home.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "Force Management",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/MPF/Forcemanagement/SitePages/Home.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "Wing Career Advisor",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/MPF/Wingcareeradvisor/SitePages/Home.aspx"
                         },
                         {
-                            text: "",
-                            href: ""
+                            text: "Virtual IN/OUT Processing Status",
+                            href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/MPF/Lists/Virtual%20InOut%20Processing/AllItems.aspx"
                         }
 
                     ]
