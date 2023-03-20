@@ -47,17 +47,37 @@ export class App {
             items: [
                 {
                     text: "307th Force Support Squadron",
-                    href: "URL Here"
+                    href: "/sites/307BW/307MSG/FSS/SitePages/Home.aspx"
                 },
                 {
-                    text: "TEXT HERE",
-                    items: [
-                        {
-                            text: "NAME",
-                            href: "URL"
-                        }
-                    ]
-                }
+                    text: "307BW vFSS",
+                    href: "https://usaf.dps.mil/sites/307BW/307MSG/FSS/vFSS/SitePages/Home.aspx",
+                },
+                {
+                    text: "307th Cyberspace Support Flight",
+                    href: " "
+                },
+                {
+                    text: "307th Services Flight",
+                    href: " "
+                },
+                {
+                    text: "Airman and Family Readiness",
+                    href: " "
+                },
+                {
+                    text: "Civilian Personnel Liaison",
+                    href: " "
+                },
+                {
+                    text: "Manpower",
+                    href: " "
+                },
+                {
+                    text: "Military Personnel Flight",
+                    href: " "
+                },
+                
             ]
 
         });
