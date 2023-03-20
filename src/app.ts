@@ -47,7 +47,8 @@ export class App {
             items: [
                 {
                     text: "307th Force Support Squadron",
-                    href: "/sites/307BW/307MSG/FSS/SitePages/Home.aspx"
+                    href: "/sites/307BW/307MSG/FSS/SitePages/Home.aspx",
+                    isActive: true
                 },
                 {
                     text: "307BW vFSS",
@@ -55,7 +56,49 @@ export class App {
                 },
                 {
                     text: "307th Cyberspace Support Flight",
-                    href: " "
+                    href: " ",
+                    items: [
+                        {
+                            text: "Home",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        }
+                    ]
                 },
                 {
                     text: "307th Services Flight",
@@ -67,15 +110,66 @@ export class App {
                 },
                 {
                     text: "Civilian Personnel Liaison",
-                    href: " "
+                    href: " ",
+                    items: [
+                        {
+                            text: "",
+                            href: ""
+                        }
+                    ]
                 },
                 {
                     text: "Manpower",
-                    href: " "
+                    href: " ",
+                    items: [
+                        {
+                            text: "",
+                            href: ""
+                        }
+                    ]
                 },
                 {
                     text: "Military Personnel Flight",
-                    href: " "
+                    href: " ",
+                    items: [
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        },
+                        {
+                            text: "",
+                            href: ""
+                        }
+
+                    ]
                 },
                 
             ]
