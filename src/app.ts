@@ -10,7 +10,6 @@ import { calendarMonth } from "gd-sprest-bs/build/icons/svgs/calendarMonth";
 import { calendar3 } from "gd-sprest-bs/build/icons/svgs/calendar3";
 import { calendarPlus } from "gd-sprest-bs/build/icons/svgs/calendarPlus";
 import { cardList } from "gd-sprest-bs/build/icons/svgs/cardList";
-import { DataSource, IItem, ISetting } from "./ds";
 import Strings from "./strings";
 import { folderFill } from "gd-sprest-bs/build/icons/svgs/folderFill";
 import { windowFullscreen } from "gd-sprest-bs/build/icons/svgs/windowFullscreen";
@@ -31,9 +30,6 @@ import { Navbar } from "gd-sprest-bs/src/components/components";
 export class App {
     // Constructor
     constructor(el: HTMLElement) {
-        ItemForm.ListName = Strings.Lists.BREvents;
-
-
         // Render the dashboard
         this.render(el);
     }
